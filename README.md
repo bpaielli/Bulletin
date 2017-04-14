@@ -18,9 +18,11 @@ Functionality:
 Database: 
 
 Table_1: (User Info)
-	COLUMNS: Unique_ID | First_Name | Last_Name | User_Name PRIMARY | Password | Email
+   COLUMNS: Unique_ID | First_Name | Last_Name | User_Name PRIMARY | Password | Email
 
-Table_2: (Posts): Post_ID | Post_Type (Offering & Seeking) | User_Name FOREIGN | Post_Location | Looking_For_A | For_Help_With | Contact_Info | Occupation
+Table_2: (Posts): 
+
+   COLUMNS:  Post_ID | Post_Type (Offering & Seeking) | User_Name FOREIGN | Post_Location | Looking_For_A | For_Help_With | Contact_Info | Occupation
 
 
 Join: 
