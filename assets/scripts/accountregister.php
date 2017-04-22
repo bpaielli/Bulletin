@@ -25,8 +25,6 @@ class accountRegister {
 			exit ();
 		}
 	}
-	
-	
 	public function createAccount() {
 		// Error Handling for empty field
 		if (empty ( $_POST ['firstname'] )) {
@@ -51,7 +49,29 @@ class accountRegister {
 		
 		// Check if the user exists in database
 		
+		$duplicate = checkUserInDB ( $email );
+		
+		if (duplicate) {
+			echo "This email address: " . $email . " already has an account.";
+			return false;
+		} 		
+
 		// Add user into database
+		else {
+			
+			// salt password
+		}
+	}
+	
+	// Check if there already exists a user email.
+	public function checkUserInDB($email) {
+		$query = mysql_query ( "SELECT email FROM user_account WHERE email='" . $email . "'" );
+		
+		if (mysql_num_rows ( $query ) != 0) {
+			return true; //user does exist in DB.
+		} else {
+			return false;
+		}
 	}
 } // end class accountRegister
 ?>
