@@ -52,7 +52,7 @@ class accountRegister {
 		$duplicate = checkUserInDB ( $email );
 		
 		if (duplicate) {
-			echo "This email address: " . $email . " already has an account.";
+			echo "This email address: " . $email . " is already registered with Bulletin.";
 			return false;
 		} 		
 
@@ -60,6 +60,11 @@ class accountRegister {
 		else {
 			
 			// salt password
+			
+			
+			
+			
+			return true;
 		}
 	}
 	
