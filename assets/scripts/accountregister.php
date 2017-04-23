@@ -48,10 +48,9 @@ class accountRegister {
 		$password = trim ( $_POST ['password'] );
 		
 		// Check if the user exists in database
-		
 		$duplicate = checkUserInDB ( $email );
 		
-		if (duplicate) {
+		if ($duplicate) {
 			echo "This email address: " . $email . " is already registered with Bulletin.";
 			return false;
 		} 		
@@ -62,15 +61,18 @@ class accountRegister {
 			// salt password
 			
 			
-			
-			
+			//insert
+			$query_str = "INSERT into user_account values( 1, " . $firstname .", " . $lastname . ", " . $email . ", " . $password . ")";
+			mysql_query($query_str);
 			return true;
 		}
 	}
 	
 	// Check if there already exists a user email.
 	public function checkUserInDB($email) {
-		$query = mysql_query ( "SELECT email FROM user_account WHERE email='" . $email . "'" );
+		
+	 	$query_str = "SELECT email FROM user_account WHERE email='" . $email . "'";
+		$query = mysql_query ( $query_str );
 		
 		if (mysql_num_rows ( $query ) != 0) {
 			return true; //user does exist in DB.
