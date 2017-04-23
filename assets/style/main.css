@@ -1,0 +1,187 @@
+/* Programmers: Austin Mutschler & Brittany Paielli */
+@CHARSET "UTF-8";
+
+html, body{
+	margin: 0px;
+	height: 100vh;
+	min-width: 1085px;
+}
+
+
+.searchinput{
+	width: 40em;
+    background-color: white;
+    color: #272727;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    margin-bottom: 1em;
+    font-size: 12pt;
+}
+
+.searchinput:focus{
+	border-style: solid;
+	border-color: #0080c0;
+	border-width: 1px;
+	border-right: none;
+}
+
+::placeholder{
+	color: #272727;
+}
+
+.mainbuttons{
+    background-color: #0080c0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12pt;
+    font-family: "Roboto";
+    cursor: pointer;
+}
+
+.mainbuttons:hover { 
+    background-color: #0080ff;
+}
+
+#searchbutton{
+    background-color: #0080c0;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12pt;
+    font-family: "Roboto";
+    cursor: pointer;
+    height: 2em;
+}
+
+#searchbutton:hover { 
+    background-color: #0080ff;
+}
+
+#head{
+	background-color: #efefef;
+	height: 3em;
+	padding: 1em 3em 3em 3em;
+}
+
+.logo{
+	float: left;
+	width: 10em;
+}
+
+.textlogo{
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 35pt;
+	color: #0080c0;
+	text-shadow: 2px 2px 20px white;
+	margin: 0;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#searcharea{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+    width: 40em;
+}
+
+.mainsearch{
+	display: flex;
+    justify-content: center;
+	height: 3em;
+	width: 40em;
+}
+
+.headright{
+	float: right;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+	height: 6em;
+	width: 10em;
+	margin-top: -0.5em;
+}
+
+#usersname{
+	margin-bottom: .5em;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	
+}
+
+#location{
+	font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+}
+
+.categories{
+	width: 15em;
+	height: 2em;
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+	outline: none;
+	font-size: 12pt;
+}
+
+.categories:active:hover{
+	outline: none;
+}
+
+
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    background-color: #efefef;
+    padding-left: 3em;
+}
+
+/* Style the buttons inside the tab */
+div.tab button.sectionl {
+    background-color: #fafafa;
+    float: left;
+    border-left: 1px solid #9b9b9b;
+    border-right: 1px solid #9b9b9b;
+    border-top: 1px solid #9b9b9b;
+    border-bottom: 1px solid #9b9b9b;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    transition: 0.1s;
+    font-size: 12pt;
+}
+
+/* Change background color of buttons on hover */
+div.tab button.sectionl:hover {
+    background-color: white;
+}
+
+/* Create an active/current tablink class */
+div.tab button.sectionl.active {
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+#newpostbutton{
+	float: right;
+	margin-right: 4em;
+}
+
+/* Style the tab content */
+.boardcontent {
+    display: none;
+    padding: 1em 3.3em 1em 3.1em;
+}

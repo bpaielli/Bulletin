@@ -43,7 +43,7 @@ html, body{
     background-size: cover;
     z-index: 3;
     width: 20em;
-    height: 29em;
+    height: 27em;
     position: absolute;
     border-radius: 25px;
 }
@@ -100,8 +100,8 @@ h1{
 	font-size: 55pt;
 	color: #0080c0;
 	text-shadow: 2px 2px 20px white;
-	margin-bottom: .2em;
-	margin-top: .2em;
+	margin-bottom: .0em;
+	margin-top: .1em;
 }
 
 #formblock{
@@ -115,13 +115,13 @@ h1{
   color: rgba(255, 255, 255, 0.7);
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 input[type=email], input[type=text], input[type=password]{

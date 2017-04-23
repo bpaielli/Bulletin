@@ -58,10 +58,10 @@ class accountRegister {
 		// Add user into database
 		else {
 			
-			// salt password
+			// TODO: salt password
 			
 			
-			//insert
+			//Insert Query
 			$query_str = "INSERT into user_account values( 1, " . $firstname .", " . $lastname . ", " . $email . ", " . $password . ")";
 			mysql_query($query_str);
 			return true;

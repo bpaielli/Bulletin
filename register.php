@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bulletin - Register</title>
 <link href="assets/style/start.css" type="text/css" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -21,7 +22,7 @@
 					name="password" placeholder="Password" required>
 
 				<p>
-					<input class="mainbuttons" type="submit" value="Register"> <a class="elsetext"> or </a> <a class="orhyper" href="login.php">Login</a>
+					<input class="mainbuttons" type="submit" name="register" value="Register"> <a class="elsetext"> or </a> <a class="orhyper" href="login.php">Login</a>
 				</p>
 			</form>
 		</div>
