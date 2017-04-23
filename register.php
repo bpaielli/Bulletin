@@ -14,7 +14,7 @@
 	<div id="overlay">
 		<div id="registercontainer">
 			<p id="registerheader">Bulletin</p>
-			<form id="formblock" action="assets/scripts/accountregister.php" method="post">
+			<form id="formblock" action="assets/scripts/controller.php" method="post">
 				<input type="text" name="firstname" placeholder="First Name"
 					autofocus required> <input type="text" name="lastname"
 					placeholder="Last Name" required> <input type="email" name="email"
