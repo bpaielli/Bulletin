@@ -33,43 +33,32 @@ class accountRegister {
 		$lastname = trim ( $lastname );
 		$email = trim ( $email );
 		$password = trim ( $password );
+	
 		
-		// Check if the user exists in database
-		$duplicate = checkUserInDB( $email );
-		
-		if ($duplicate) {
-			echo "ERROR: This email address is already registered with Bulletin.";
-			return false;
-		} 		
-
-		// Add user into database
-		else {
-			
-			// TODO: salt password
+		// TODO: salt password
 			
 			
-			//Insert Query
-			$query_str1 = "INSERT into user_account values( 1, " . $firstname .", " . $lastname . ", " . $email . ", " . $password . ")";
-			mysql_query($query_str1, $DB);
-			return true;
-		}
+		//Insert Query
+		$query_str1 = "INSERT into user_account values( 1, " . $firstname .", " . $lastname . ", " . $email . ", " . $password . ")";
+		mysql_query($query_str1);
+			
 		
-		header("../board.php"); /* Redirect browser to board after successful login */
-		exit();
-		
+		header("Location: ../../board.php"); /* Redirect browser to board after successful login */
+		exit;
+		return true;
 	}
 	
-	// Check if there already exists a user email.
-	public function checkUserInDB($email) {
+// 	// Check if there already exists a user email.
+// 	public function checkUserInDB($email) {
 		
-	 	$query_str = "SELECT email FROM user_account WHERE email='" . $email . "'";
-		$query = mysql_query ( $query_str, $DB);
+// 	 	$query_str = "SELECT email FROM user_account WHERE email='" . $email . "'";
+// 		$query = mysql_query ( $query_str, $DB);
 		
-		if (mysql_num_rows ( $query ) != 0) {
-			return true; //user does exist in DB.
-		} else {
-			return false;
-		}
-	}
+// 		if (mysql_num_rows ( $query ) != 0) {
+// 			return true; //user does exist in DB.
+// 		} else {
+// 			return false;
+// 		}
+// 	}
 } // end class accountRegister
 ?>
