@@ -11,8 +11,14 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$password =  $_POST ['password'];
 	
 	$accountReg = new accountRegister(); 
+	$result = $accountReg -> userExistInDB($email);
 	
-	$accountReg -> createAccount($firstname, $lastname, $email, $password);
+	if($result){
+		echo "<br><br>The email: " . $email .  " already has an account registered with Bulletin.";
+	}else{
+		$accountReg -> createAccount($firstname, $lastname, $email, $password);
+	}
+
 }
 
 
