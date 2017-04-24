@@ -7,7 +7,6 @@ html, body{
 	min-width: 1085px;
 }
 
-
 .searchinput{
 	width: 40em;
     background-color: white;
@@ -27,7 +26,7 @@ html, body{
 }
 
 ::placeholder{
-	color: #272727;
+	color: #5c5c5c;
 }
 
 .mainbuttons{
@@ -140,16 +139,12 @@ html, body{
 	outline: none;
 }
 
-
-
-/* Style the tab */
 div.tab {
     overflow: hidden;
     background-color: #efefef;
     padding-left: 3em;
 }
 
-/* Style the buttons inside the tab */
 div.tab button.sectionl {
     background-color: #fafafa;
     float: left;
@@ -164,12 +159,10 @@ div.tab button.sectionl {
     font-size: 12pt;
 }
 
-/* Change background color of buttons on hover */
 div.tab button.sectionl:hover {
     background-color: white;
 }
 
-/* Create an active/current tablink class */
 div.tab button.sectionl.active {
     background-color: white;
     border-bottom: 1px solid white;
@@ -180,8 +173,95 @@ div.tab button.sectionl.active {
 	margin-right: 4em;
 }
 
-/* Style the tab content */
 .boardcontent {
     display: none;
     padding: 1em 3.3em 1em 3.1em;
+}
+
+.cpbox {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.cp-content {
+    background-color: white;
+    margin: 2em auto;
+    padding: 1.5em;
+    border: 1px solid #888;
+    width: 26em;
+    height: 33em;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#createoffering{
+	display: none;
+}
+
+#createseeking{
+/* 	display: none; */
+}
+
+.createposttemplate{
+	border: 2px solid black;
+	background-color: #ececff;
+	font-size: 18pt;
+	font-family: "Roboto";
+	margin: 0 auto;
+	width: 11em;
+	height: 15em;
+	padding: 0em 1em;
+}
+
+.postcontentname{
+	text-align: justify;
+	margin: 0;
+	margin-top: .5em;
+	margin-bottom: .2em;
+	line-height: 1.5em;
+}
+
+.postcontenttext{
+	text-align: justify;
+	margin: 0;
+	margin-top: .2em;
+	margin-bottom: .2em;
+	line-height: 1.5em;
+}
+
+.createpostoccupation{
+	font-size: 18pt;
+	font-family: "Roboto";
+	width: 11em;
+}
+
+.createpostdescription{
+	font-size: 18pt;
+	font-family: "Roboto";
+	resize: none;
+	width: 11em;
+	height: 5em;
+}
+
+.createpostduedate{
+	font-size: 16pt;
+	width: 9.91em;
 }

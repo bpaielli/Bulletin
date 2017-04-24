@@ -37,7 +37,7 @@
 		<button id="home" class="sectionl" onclick="openPage('Offering')">Offering</button>
 		<button class="sectionl" onclick="openPage('Seeking')">Seeking</button>
 		<button class="sectionl" onclick="openPage('MyPosts')">My Posts</button>
-		<div id="newpostbutton"><button class="mainbuttons" name="newpostbutton">Create Post</button></div>
+		<div id="newpostbutton"><button class="mainbuttons">Create Post</button></div>
 	</div>
 
 	<div id="Offering" class="boardcontent">
@@ -51,7 +51,32 @@
 	<div id="MyPosts" class="boardcontent">
 		<p>My Posts</p>
 	</div>
+
+	<div id="createpostbox" class="cpbox">
+		<div class="cp-content">
+			<span class="close">&times;</span>
+
+			<p>Post Type: 
+						<select class="posttype" name="posttype">
+						<option value="offering">Offering</option>
+						<option value="seeking">Seeking</option>
+						</select>
+			</p>
+			<div id="createoffering" class="createposttemplate">
+				
+			</div>
+			<div id="createseeking" class="createposttemplate">
+				<p class="postcontentname">My name is Austin. I'm looking for a...</p>
+				<input class="createpostoccupation" type="text" name="createpostoccupation" placeholder="Babysitter">
+				<p class="postcontenttext">for help with...</p>
+				<textarea class="createpostdescription" name="createpostdescription" placeholder="Description"></textarea>
+				<p class="postcontenttext">by... <input class="createpostduedate" type="date" name="createpostduedate"></p>
+			</div>
+		</div>
+	</div>
 </body>
+
 <script type="text/javascript" src="assets/js/geolocation.js"></script>
 <script type="text/javascript" src="assets/js/tabs.js"></script>
+<script type="text/javascript" src="assets/js/createpostbox.js"></script>
 </html>
