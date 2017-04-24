@@ -1,6 +1,6 @@
 <?php
 
-include 'accountregister.php';
+require_once 'accountregister.php';
 
 
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password']) ){
@@ -10,8 +10,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$email = $_POST ['email'] ;
 		$password =  $_POST ['password'];
 	
-	$accountReg = new accountRegister();
-		
+	$accountReg = new accountRegister(); 
+	
 	$accountReg -> createAccount($firstname, $lastname, $email, $password);
 }
 

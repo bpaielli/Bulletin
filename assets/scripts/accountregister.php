@@ -21,44 +21,34 @@ class accountRegister {
 			$this->DB = new PDO ( $db, $user, $password );
 			$this->DB->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		} catch ( PDOException $e ) {
-			echo 'ERROR: establishing Connection';
+			echo ('Error establishing Connection');
 			exit ();
 		}
 	}
 	
-	public function createAccount($firstname, $lastname, $email, $password) {
+	public function createAccount($firstname, $lastname, $email, $pwd) {
 		
-		// trim variables
+		// trim all variables, except password
 		$firstname = trim ( $firstname );
 		$lastname = trim ( $lastname );
 		$email = trim ( $email );
-		$password = trim ( $password );
-	
 		
-		// TODO: salt password
-			
-			
-		//Insert Query
-		$query_str1 = "INSERT into user_account values( 1, " . $firstname .", " . $lastname . ", " . $email . ", " . $password . ")";
-		mysql_query($query_str1);
-			
+		//hashed and salted password
+		$hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
 		
-		header("Location: ../../board.php"); /* Redirect browser to board after successful login */
-		exit;
+		//increment unique ID
+		$stmt = $this ->DB->prepare("SELECT MAX(ID) FROM user_account;");
+		$stmt->execute ();
+		$uniqueID = $stmt->fetchColumn();
+		$uniqueID++;
+		
+		// insert new account user in DB
+		$stmt1 = $this->DB->prepare ("INSERT into user_account values(" . $uniqueID .", '" . $firstname . "', '" . $lastname . "', '" . $email . "', '" . $password . "');");
+		$stmt1->execute ();
+		
+		//Redirect to Board Page.
+		header ( "Location: ../../board.php" ); 
 		return true;
 	}
-	
-// 	// Check if there already exists a user email.
-// 	public function checkUserInDB($email) {
-		
-// 	 	$query_str = "SELECT email FROM user_account WHERE email='" . $email . "'";
-// 		$query = mysql_query ( $query_str, $DB);
-		
-// 		if (mysql_num_rows ( $query ) != 0) {
-// 			return true; //user does exist in DB.
-// 		} else {
-// 			return false;
-// 		}
-// 	}
 } // end class accountRegister
 ?>
