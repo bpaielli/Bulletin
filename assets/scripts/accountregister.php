@@ -42,13 +42,13 @@ class accountRegister {
 		$uniqueID ++;
 		
 		// insert new account user in DB
-		$stmt1 = $this->DB->prepare ( "INSERT into user_account values(" . $uniqueID . ", '" . $firstname . "', '" . $lastname . "', '" . $email . "', '" . $password . "');" );
+		$stmt1 = $this->DB->prepare ( "INSERT into user_account values(" . $uniqueID . ", '" . $firstname . "', '" . $lastname . "', '" . $email . "', '" . $hashed_pwd . "');" );
 		$stmt1->execute ();
 		
 		return true;
 	}
 	
-	// Check if there already exists a user email.
+	
 	public function userExistInDB($email) {
 		$stmt = $this->DB->prepare ( "SELECT email FROM user_account WHERE email='" . $email . "';" );
 		$stmt->execute ();
@@ -60,5 +60,25 @@ class accountRegister {
 			return true; // email address in db
 		}
 	}
+	
+	public function verifyLogin($email, $pwd){
+		//verify credenials
+		$stmt = $this->DB->prepare ( "SELECT password FROM user_account WHERE email='" . $email . "';" );
+		$stmt->execute ();
+		$db_pwd = $stmt->fetchColumn();
+		
+		$isValid = password_verify($pwd, $db_pwd);
+		
+		
+		if(!$isValid){
+			return false; //password not valid.
+		}
+		else{
+			return true;
+		}
+
+	}
+	
+	
 } // end class accountRegister
 ?>

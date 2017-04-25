@@ -13,7 +13,7 @@
 	<div id="overlay">
 		<div id="logincontainer">
 			<p id="loginheader">Bulletin</p>
-			<form id="formblock" action="assets/scripts/accountlogin.php" method="post">
+			<form id="formblock" action="assets/scripts/controller.php" method="post">
 				<input type="email" name="email" placeholder="Email" autofocus required>
 				<input type="password" name="password" placeholder="Password" required>
 
