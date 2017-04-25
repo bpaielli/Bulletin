@@ -1,4 +1,5 @@
 <!-- Programmers: Austin Mutschler & Brittany Paielli -->
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 			<h1 class="textlogo">Bulletin</h1>
 		</div>
 		<div class="headright">
-			<div id="usersname">Austin</div>
+			<div id="usersname"><?php echo $_SESSION['user_firstname'];?></div>
 			
 		</div>
 		<div id="searcharea">
@@ -66,7 +67,7 @@
 				
 			</div>
 			<div id="createseeking" class="createposttemplate">
-				<p class="postcontentname">My name is Austin. I'm looking for a...</p>
+				<p class="postcontentname">My name is <?php echo $_SESSION['user_firstname']; ?>. I'm looking for a...</p>
 				<input class="createpostoccupation" type="text" name="createpostoccupation" placeholder="Babysitter">
 				<p class="postcontenttext">for help with...</p>
 				<textarea class="createpostdescription" name="createpostdescription" placeholder="Description"></textarea>

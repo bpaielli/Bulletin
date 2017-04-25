@@ -8,8 +8,6 @@ and make a new row in the database.
 
 
 <?php
-// start session
-session_start ();
 class accountRegister {
 	private $DB;
 	
@@ -47,9 +45,6 @@ class accountRegister {
 		$stmt1 = $this->DB->prepare ( "INSERT into user_account values(" . $uniqueID . ", '" . $firstname . "', '" . $lastname . "', '" . $email . "', '" . $password . "');" );
 		$stmt1->execute ();
 		
-		// Redirect to Board Page.
-		header ( "Location: ../../board.php" );
-		exit();
 		return true;
 	}
 	
