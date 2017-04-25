@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'accountregister.php';
-$accountReg = new accountRegister();
+require_once 'model.php';
+$accountDatabaseAdapter = new accountDatabaseAdapter();
 
 
 //REGISTER FOR ACCOUNT
@@ -12,13 +12,13 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$email = $_POST ['email'] ;
 		$password =  $_POST ['password'];
 		
-		$existsInDB = $accountReg -> userExistInDB($email);
+		$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 		
 	if($existsInDB){
 		echo "<br><br>The email: " . $email .  " already has an account registered with Bulletin.";
 	}else{
 		//create account
-		$accountReg -> createAccount($firstname, $lastname, $email, $password);
+		$accountDatabaseAdapter -> createAccount($firstname, $lastname, $email, $password);
 		//set session variable
 		$_SESSION['user_firstname'] = $firstname;
 		
@@ -34,14 +34,14 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	
 	$email = $_POST ['email'] ;
 	$password =  $_POST ['password'];
-	$existsInDB = $accountReg -> userExistInDB($email);
+	$existsInDB = $accountDatabaseAdapterg -> userExistInDB($email);
 	
 	if(!$existsInDB){
 		echo "No account found for " . $email;
 		
 	}else{
 		//check password
-		$userVerfied = $accountReg ->verifyLogin($email, $password);
+		$userVerfied = $accountDatabaseAdapter ->verifyLogin($email, $password);
 		
 		if(!$userVerfied){
 			echo "Incorrect Password";

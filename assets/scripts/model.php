@@ -8,7 +8,7 @@ and make a new row in the database.
 
 
 <?php
-class accountRegister {
+class accountDatabaseAdapter {
 	private $DB;
 	
 	// establish connection to the database named 'bulletin_db'
@@ -80,5 +80,5 @@ class accountRegister {
 	}
 	
 	
-} // end class accountRegister
+} // end class acccountDatabaseAdapter
 ?>
