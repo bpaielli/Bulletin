@@ -34,7 +34,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	
 	$email = $_POST ['email'] ;
 	$password =  $_POST ['password'];
-	$existsInDB = $accountDatabaseAdapterg -> userExistInDB($email);
+	$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 	
 	if(!$existsInDB){
 		echo "No account found for " . $email;
@@ -48,7 +48,8 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 		}
 		else{
 			//set session variable
-			$_SESSION['user_firstname'] = 'Bob';
+			$user_firstname = $accountDatabaseAdapter ->getUserName($email);
+			$_SESSION['user_firstname'] = $user_firstname ;
 			
 			// Redirect to Board Page.
 			header ( "Location: ../../board.php" );

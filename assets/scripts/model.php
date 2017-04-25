@@ -50,7 +50,8 @@ class accountDatabaseAdapter {
 	
 	
 	public function userExistInDB($email) {
-		$stmt = $this->DB->prepare ( "SELECT email FROM user_account WHERE email='" . $email . "';" );
+		$stmt = $this->DB->prepare ( "SELECT email FROM user_account WHERE email= :email" );
+		$stmt->bindParam ( 'email', $email );
 		$stmt->execute ();
 		
 		$result = $stmt->rowCount();
@@ -63,7 +64,8 @@ class accountDatabaseAdapter {
 	
 	public function verifyLogin($email, $pwd){
 		//verify credenials
-		$stmt = $this->DB->prepare ( "SELECT password FROM user_account WHERE email='" . $email . "';" );
+		$stmt = $this->DB->prepare ( "SELECT password FROM user_account WHERE email= :email" );
+		$stmt->bindParam ('email', $email );
 		$stmt->execute ();
 		$db_pwd = $stmt->fetchColumn();
 		
@@ -79,6 +81,14 @@ class accountDatabaseAdapter {
 
 	}
 	
+	public function getUserName($email){
+		$stmt = $this->DB->prepare ( "SELECT first_name FROM user_account WHERE email= :email" );
+		$stmt->bindParam ('email', $email );
+		$stmt->execute ();
+		$name = $stmt->fetchColumn();
+		
+		return $name;
+	}
 	
 } // end class acccountDatabaseAdapter
 ?>
