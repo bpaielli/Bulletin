@@ -71,7 +71,6 @@ class accountDatabaseAdapter {
 		
 		$isValid = password_verify($pwd, $db_pwd);
 		
-		
 		if(!$isValid){
 			return false; //password not valid.
 		}

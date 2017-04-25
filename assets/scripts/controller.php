@@ -7,10 +7,10 @@ $accountDatabaseAdapter = new accountDatabaseAdapter();
 //REGISTER FOR ACCOUNT
 if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['password']) ){
 	
-		$firstname = $_POST ['firstname'];
-		$lastname = $_POST ['lastname'];
-		$email = $_POST ['email'] ;
-		$password =  $_POST ['password'];
+		$firstname =  htmlspecialchars($_POST ['firstname']);
+		$lastname = htmlspecialchars($_POST ['lastname']);
+		$email = htmlspecialchars($_POST ['email']) ;
+		$password =  htmlspecialchars($_POST ['password']);
 		
 		$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 		
@@ -32,8 +32,8 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 //LOGIN TO ACCOUNT
 else if(isset($_POST['email']) && isset($_POST['password'])){
 	
-	$email = $_POST ['email'] ;
-	$password =  $_POST ['password'];
+	$email = htmlspecialchars($_POST ['email']) ;
+	$password =  htmlspecialchars($_POST ['password']);
 	$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 	
 	if(!$existsInDB){
