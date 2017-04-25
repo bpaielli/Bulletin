@@ -20,7 +20,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		//create account
 		$accountDatabaseAdapter -> createAccount($firstname, $lastname, $email, $password);
 		//set session variable
-		$_SESSION['user_firstname'] = $firstname;
+		$_SESSION['user'] = $firstname;
 		
 		// Redirect to Board Page.
 		header ( "Location: ../../board.php" );
@@ -49,7 +49,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 		else{
 			//set session variable
 			$user_firstname = $accountDatabaseAdapter ->getUserName($email);
-			$_SESSION['user_firstname'] = $user_firstname ;
+			$_SESSION['user'] = $user_firstname ;
 			
 			// Redirect to Board Page.
 			header ( "Location: ../../board.php" );

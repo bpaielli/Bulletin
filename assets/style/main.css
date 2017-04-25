@@ -170,7 +170,13 @@ div.tab button.sectionl.active {
 
 #newpostbutton{
 	float: right;
-	margin-right: 4em;
+	margin-right: 1em;
+}
+
+
+#logoutbutton{
+	float: right;
+	margin-right: 2em;
 }
 
 .boardcontent {

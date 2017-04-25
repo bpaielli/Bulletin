@@ -16,7 +16,7 @@
 			<h1 class="textlogo">Bulletin</h1>
 		</div>
 		<div class="headright">
-			<div id="usersname"><?php echo $_SESSION['user_firstname'];?></div>
+			<div id="usersname"><?php echo $_SESSION['user'];?></div>
 			
 		</div>
 		<div id="searcharea">
@@ -38,7 +38,9 @@
 		<button id="home" class="sectionl" onclick="openPage('Offering')">Offering</button>
 		<button class="sectionl" onclick="openPage('Seeking')">Seeking</button>
 		<button class="sectionl" onclick="openPage('MyPosts')">My Posts</button>
+		<div id="logoutbutton"><button class="mainbuttons">Logout</button></div>
 		<div id="newpostbutton"><button class="mainbuttons">Create Post</button></div>
+		
 	</div>
 
 	<div id="Offering" class="boardcontent">
@@ -67,7 +69,7 @@
 				
 			</div>
 			<div id="createseeking" class="createposttemplate">
-				<p class="postcontentname">My name is <?php echo $_SESSION['user_firstname']; ?>. I'm looking for a...</p>
+				<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I'm looking for a...</p>
 				<input class="createpostoccupation" type="text" name="createpostoccupation" placeholder="Babysitter">
 				<p class="postcontenttext">for help with...</p>
 				<textarea class="createpostdescription" name="createpostdescription" placeholder="Description"></textarea>
