@@ -37,14 +37,15 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 	
 	if(!$existsInDB){
-		echo "No account found for " . $email;
+		echo "Email and/or Password Incorrect";
 		
-	}else{
+	}
+	else{
 		//check password
 		$userVerfied = $accountDatabaseAdapter ->verifyLogin($email, $password);
 		
 		if(!$userVerfied){
-			echo "Incorrect Password";
+			echo "Email and/or Password Incorrect";
 		}
 		else{
 			//set session variable

@@ -1,4 +1,12 @@
 <!-- Programmers: Austin Mutschler & Brittany Paielli -->
+
+<?php session_start();
+
+// If user is logged in
+if (isset($_SESSION['user'])){
+	header ("Location: board.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

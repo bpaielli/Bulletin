@@ -113,11 +113,45 @@ html, body{
 	margin-top: -0.5em;
 }
 
+.dropbox{
+	position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 0 -1.5em;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-family: "Roboto", sans-serif;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
 #usersname{
 	margin-bottom: .5em;
 	font-family: 'Roboto', sans-serif;
 	font-size: 12pt;
-	
+	cursor: pointer;
 }
 
 #location{
@@ -170,7 +204,7 @@ div.tab button.sectionl.active {
 
 #newpostbutton{
 	float: right;
-	margin-right: 1em;
+	margin-right: 4em;
 }
 
 
@@ -185,7 +219,7 @@ div.tab button.sectionl.active {
 }
 
 .cpbox {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -199,10 +233,11 @@ div.tab button.sectionl.active {
 .cp-content {
     background-color: white;
     margin: 2em auto;
-    padding: 1.5em;
+    padding: .5em 1.5em .5em 1.5em;
     border: 1px solid #888;
     width: 26em;
-    height: 33em;
+    height: 28em;
+    border-radius: 25px;
 }
 
 .close {

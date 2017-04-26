@@ -21,7 +21,7 @@ class accountDatabaseAdapter {
 			$this->DB = new PDO ( $db, $user, $password );
 			$this->DB->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		} catch ( PDOException $e ) {
-			echo ('Error establishing Connection');
+			echo ('Error Establishing Connection');
 			exit ();
 		}
 	}

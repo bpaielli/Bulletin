@@ -1,5 +1,11 @@
 <!-- Programmers: Austin Mutschler & Brittany Paielli -->
-<?php session_start();?>
+<?php session_start();
+
+// If user is not logged in
+if (!isset($_SESSION['user'])){
+	header ("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +22,12 @@
 			<h1 class="textlogo">Bulletin</h1>
 		</div>
 		<div class="headright">
+		<div class="dropdown">
 			<div id="usersname"><?php echo $_SESSION['user'];?></div>
+			<div class="dropdown-content">
+					<a href="logout.php">Logout</a>
+				</div>
+		</div>
 			
 		</div>
 		<div id="searcharea">
@@ -38,7 +49,6 @@
 		<button id="home" class="sectionl" onclick="openPage('Offering')">Offering</button>
 		<button class="sectionl" onclick="openPage('Seeking')">Seeking</button>
 		<button class="sectionl" onclick="openPage('MyPosts')">My Posts</button>
-		<div id="logoutbutton"><button class="mainbuttons">Logout</button></div>
 		<div id="newpostbutton"><button class="mainbuttons">Create Post</button></div>
 		
 	</div>
@@ -70,7 +80,7 @@
 			</div>
 			<div id="createseeking" class="createposttemplate">
 				<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I'm looking for a...</p>
-				<input class="createpostoccupation" type="text" name="createpostoccupation" placeholder="Babysitter">
+				<input class="createpostoccupation" type="text" name="createpostoccupation" placeholder="Occupation (Developer)">
 				<p class="postcontenttext">for help with...</p>
 				<textarea class="createpostdescription" name="createpostdescription" placeholder="Description"></textarea>
 				<p class="postcontenttext">by... <input class="createpostduedate" type="date" name="createpostduedate"></p>
@@ -82,4 +92,5 @@
 <script type="text/javascript" src="assets/js/geolocation.js"></script>
 <script type="text/javascript" src="assets/js/tabs.js"></script>
 <script type="text/javascript" src="assets/js/createpostbox.js"></script>
+<script type="text/javascript" src="assets/js/logout.js"></script>
 </html>
