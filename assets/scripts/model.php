@@ -42,7 +42,14 @@ class accountDatabaseAdapter {
 		$uniqueID ++;
 		
 		// insert new account user in DB
-		$stmt1 = $this->DB->prepare ( "INSERT into user_account values(" . $uniqueID . ", '" . $firstname . "', '" . $lastname . "', '" . $email . "', '" . $hashed_pwd . "');" );
+		$stmt1 = $this->DB->prepare ( "INSERT into user_account values(:uniqueID, :firstname, :lastname, :email, :hashed_pwd);" );
+		
+		$stmt1->bindParam('uniqueID', $uniqueID);
+		$stmt1->bindParam('firstname', $firstname);
+		$stmt1->bindParam('lastname', $lastname);
+		$stmt1->bindParam('email', $email);
+		$stmt1->bindParam('hashed_pwd', $hashed_pwd);
+		
 		$stmt1->execute ();
 		
 		return true;
