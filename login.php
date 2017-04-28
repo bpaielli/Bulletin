@@ -24,12 +24,18 @@ if (isset ( $_SESSION ['user'] )) {
 	<div id="overlay">
 		<div id="logincontainer">
 			<p id="loginheader">Bulletin</p>
+			
 			<form action="assets/scripts/controller.php" method="post">
 				<div id="formblock">
 					<input type="email" name="email" placeholder="Email" autofocus
 						required> <input type="password" name="password"
 						placeholder="Password" required>
-					<div id="loginErrMessage"></div>
+					<div id="loginErrMessage"><?php 
+					
+					if(isset($_GET['error']) && ($_GET['error'] == 'badCreds')){
+						echo "Incorrect Email or Password";
+					}
+					?></div>
 					<p>
 						<input class="mainbuttons" type="submit" name="login"
 							value="Login"> <a class="elsetext"> or </a> <a class="orhyper"

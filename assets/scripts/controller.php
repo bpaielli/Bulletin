@@ -15,7 +15,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 		
 	if($existsInDB){
-		echo "<br><br>The email: " . $email .  " already has an account registered with Bulletin.";
+		header("Location: ../../register.php?error=duplicateCreds");
 	}else{
 		//create account
 		$accountDatabaseAdapter -> createAccount($firstname, $lastname, $email, $password);
@@ -38,7 +38,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	
 	//wrong username
 	if(!$existsInDB){
-		echo "Incorrect Email or Password";
+		header("Location: ../../login.php?error=badCreds");
 		
 	}
 	else{
@@ -48,7 +48,6 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 		//wrong password
 		if(!$userVerfied){
 			header("Location: ../../login.php?error=badCreds");
-			//echo "Incorrect Email or Password";
 		}
 		else{
 			//set session variable
