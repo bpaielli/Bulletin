@@ -25,7 +25,7 @@ if (!isset($_SESSION['user'])){
 		<div class="dropdown">
 			<div id="usersname"><?php echo $_SESSION['user'];?></div>
 			<div class="dropdown-content">
-					<a href="logout.php">Logout</a>
+					<a href="assets/scripts/logout.php">Logout</a>
 				</div>
 		</div>
 			

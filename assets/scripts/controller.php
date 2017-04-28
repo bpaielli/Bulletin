@@ -36,16 +36,19 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	$password =  htmlspecialchars($_POST ['password']);
 	$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 	
+	//wrong username
 	if(!$existsInDB){
-		echo "Email and/or Password Incorrect";
+		echo "Incorrect Email or Password";
 		
 	}
 	else{
 		//check password
 		$userVerfied = $accountDatabaseAdapter ->verifyLogin($email, $password);
 		
+		//wrong password
 		if(!$userVerfied){
-			echo "Email and/or Password Incorrect";
+			header("Location: ../../login.php?error=badCreds");
+			//echo "Incorrect Email or Password";
 		}
 		else{
 			//set session variable
