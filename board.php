@@ -35,9 +35,10 @@ if (!isset($_SESSION['user'])){
 				<input class="searchinput" type="text" name="search" placeholder="Search">
 				<select class="categories" name="categories">
 					<option value="all">All Categories</option>
-					<option value="tutor">Tutoring</option>
+					<option value="babysitting">Babysitting</option>
 					<option value="landscape">Landscaping</option>
-					<option value="babysitter">Babysitter</option>
+					<option value="softwaredevelopment">Software Development</option>
+					<option value="tutor">Tutoring</option>			
 				</select>
 				<button id="searchbutton">Search</button>
 			</div>
@@ -54,11 +55,73 @@ if (!isset($_SESSION['user'])){
 	</div>
 
 	<div id="Offering" class="boardcontent">
-		<p>Offering</p>
+	
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I am a <span class="userinputtedfield">OCCUPATION</span> looking for people that need <span class="userinputtedfield">DESCRIPTION</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I am a <span class="userinputtedfield">OCCUPATION</span> looking for people that need <span class="userinputtedfield">DESCRIPTION</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I am a <span class="userinputtedfield">OCCUPATION</span> looking for people that need <span class="userinputtedfield">DESCRIPTION</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I am a <span class="userinputtedfield">OCCUPATION</span> looking for people that need <span class="userinputtedfield">DESCRIPTION</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I am a <span class="userinputtedfield">OCCUPATION</span> looking for people that need <span class="userinputtedfield">DESCRIPTION</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I am a <span class="userinputtedfield">OCCUPATION</span> looking for people that need <span class="userinputtedfield">DESCRIPTION</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		
 	</div>
 
 	<div id="Seeking" class="boardcontent">
-		<p>Seeking</p>
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I'm looking for a <span class="userinputtedfield">OCCUPATION</span> for help with <span class="userinputtedfield">DESCRIPTION</span> by <span class="userinputtedfield">DATE</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I'm looking for a <span class="userinputtedfield">OCCUPATION</span> for help with <span class="userinputtedfield">DESCRIPTION</span> by <span class="userinputtedfield">DATE</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I'm looking for a <span class="userinputtedfield">OCCUPATION</span> for help with <span class="userinputtedfield">DESCRIPTION</span> by <span class="userinputtedfield">DATE</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I'm looking for a <span class="userinputtedfield">OCCUPATION</span> for help with <span class="userinputtedfield">DESCRIPTION</span> by <span class="userinputtedfield">DATE</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I'm looking for a <span class="userinputtedfield">OCCUPATION</span> for help with <span class="userinputtedfield">DESCRIPTION</span> by <span class="userinputtedfield">DATE</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		<div class="posttemplate">
+			<p class="livepostcontent">My name is <span class="userinputtedfield">NAME</span>. I'm looking for a <span class="userinputtedfield">OCCUPATION</span> for help with <span class="userinputtedfield">DESCRIPTION</span> by <span class="userinputtedfield">DATE</span></p>
+			<button id="contactbutton" class="USERID">Contact Now</button>	
+		</div>
+		
+		
 	</div>
 
 	<div id="MyPosts" class="boardcontent">
@@ -69,14 +132,18 @@ if (!isset($_SESSION['user'])){
 		<div class="cp-content">
 			<span class="close">&times;</span>
 
-			<p>Post Type: 
-						<select class="posttype" name="posttype">
-						<option value="offering">Offering</option>
-						<option value="seeking">Seeking</option>
-						</select>
-			</p>
+
+			<div id="createposttypepicker">
+				<button class="pickerbutton" onclick="offeringSeekingSelection('createoffering')">Offering</button>
+				or
+				<button class="pickerbutton" onclick="offeringSeekingSelection('createseeking')">Seeking</button>
+			</div>
+
 			<div id="createoffering" class="createposttemplate">
-				
+				<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I am a...</p>
+				<input class="createpostoccupation" type="text" name="createpostoccupation" placeholder="Your Occupation">
+				<p class="postcontenttext">looking for people that need...</p>
+				<textarea class="createpostdescription" name="createpostdescription" placeholder="Description"></textarea>
 			</div>
 			<div id="createseeking" class="createposttemplate">
 				<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I'm looking for a...</p>
@@ -85,6 +152,19 @@ if (!isset($_SESSION['user'])){
 				<textarea class="createpostdescription" name="createpostdescription" placeholder="Description"></textarea>
 				<p class="postcontenttext">by... <input class="createpostduedate" type="date" name="createpostduedate"></p>
 			</div>
+			
+			<div id="createpostoptions">
+			<p>
+			Category: 
+				<select class="createpostcategories" name="createpostcategories">
+					<option value="babysitting">Babysitting</option>
+					<option value="landscape">Landscaping</option>
+					<option value="softwaredevelopment">Software Development</option>
+					<option value="tutor">Tutoring</option>			
+				</select>
+			</p>
+			<button id="createpostbutton">Create Post</button>
+			</div>
 		</div>
 	</div>
 </body>
@@ -92,5 +172,4 @@ if (!isset($_SESSION['user'])){
 <script type="text/javascript" src="assets/js/geolocation.js"></script>
 <script type="text/javascript" src="assets/js/tabs.js"></script>
 <script type="text/javascript" src="assets/js/createpostbox.js"></script>
-<script type="text/javascript" src="assets/js/logout.js"></script>
 </html>

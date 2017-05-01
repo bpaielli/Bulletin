@@ -215,11 +215,15 @@ div.tab button.sectionl.active {
 
 .boardcontent {
     display: none;
+    float: left;
     padding: 1em 3.3em 1em 3.1em;
 }
 
 .cpbox {
-    display: none;
+	display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -232,17 +236,18 @@ div.tab button.sectionl.active {
 
 .cp-content {
     background-color: white;
+    font-size: 12pt;
+	font-family: "Roboto";
     margin: 2em auto;
-    padding: .5em 1.5em .5em 1.5em;
+    padding: 0.5em 1.5em 2em 1.5em;
     border: 1px solid #888;
     width: 26em;
-    height: 28em;
     border-radius: 25px;
+    transition: 0.5s;
 }
 
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
 }
@@ -253,16 +258,33 @@ div.tab button.sectionl.active {
     cursor: pointer;
 }
 
+#createposttypepicker{
+	margin-bottom: 20px;
+	text-align: center;
+	transition: 0.5s;
+}
+
+.pickerbutton {
+    background-color: #fafafa;
+    border: 1px solid #9b9b9b;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    font-size: 12pt;
+    transition: 0.1s;
+}
+
 #createoffering{
 	display: none;
 }
 
 #createseeking{
-/* 	display: none; */
+	display: none;
 }
 
 .createposttemplate{
-	border: 2px solid black;
+	border: 1px solid black;
+	border-radius: 1em;
 	background-color: #ececff;
 	font-size: 18pt;
 	font-family: "Roboto";
@@ -305,4 +327,71 @@ div.tab button.sectionl.active {
 .createpostduedate{
 	font-size: 16pt;
 	width: 9.75em;
+}
+
+#createpostoptions{
+	display: none;
+	text-align: center;
+	margin-top: 1em;
+}
+
+.createpostcategories{
+	height: 2em;
+	outline: none;
+	font-size: 12pt;
+}
+
+.createpostcategories:active:hover{
+	outline: none;
+}
+
+#createpostbutton{
+	background-color: #0080c0;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12pt;
+    font-family: "Roboto";
+    cursor: pointer;
+    height: 3em;
+}
+
+.posttemplate{
+	float: left;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 1em;
+	background-color: #ececff;
+	font-size: 14pt;
+	font-family: "Roboto";
+	margin: .7em;
+	width: 9em;
+	padding: 1em 1em;
+	line-height: 1.5em;
+}
+
+.livepostcontent{
+	margin-top: 0;
+}
+
+
+.userinputtedfield{
+	font-weight: bold;
+	background-color: #ffff00;
+}
+
+
+#contactbutton{
+	background-color: #0080c0;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12pt;
+    font-family: "Roboto";
+    cursor: pointer;
+    height: 3em;
 }

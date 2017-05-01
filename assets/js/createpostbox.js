@@ -7,7 +7,7 @@ var createButton = document.getElementById("newpostbutton");
 var close = document.getElementsByClassName("close")[0];
 
 createButton.onclick = function() {
-	cpbox.style.display = "block";
+	cpbox.style.display = "flex";
 }
 
 close.onclick = function() {

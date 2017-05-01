@@ -30,12 +30,12 @@ if (isset ( $_SESSION ['user'] )) {
 					<input type="email" name="email" placeholder="Email" autofocus
 						required> <input type="password" name="password"
 						placeholder="Password" required>
-					<div id="loginErrMessage"><?php 
-					
-					if(isset($_GET['error']) && ($_GET['error'] == 'badCreds')){
-						echo "Incorrect Email or Password";
-					}
-					?></div>
+					<div id="loginErrMessage">
+					<?php 
+						if(isset($_GET['error']) && ($_GET['error'] == 'badCreds'))
+							echo "Incorrect Email or Password";
+					?>
+					</div>
 					<p>
 						<input class="mainbuttons" type="submit" name="login"
 							value="Login"> <a class="elsetext"> or </a> <a class="orhyper"
@@ -47,8 +47,6 @@ if (isset ( $_SESSION ['user'] )) {
 		</div>
 
 	</div>
-
-	<script type="text/javascript" src="assets/js/errorMessage.js"></script>
 </body>
 </html>
 
