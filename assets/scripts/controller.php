@@ -21,7 +21,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$accountDatabaseAdapter -> createAccount($firstname, $lastname, $email, $password);
 		//set session variable
 		$_SESSION['user'] = $firstname;
-		
+		$_SESSION['user_email'] = $email;
 		// Redirect to Board Page.
 		header ( "Location: ../../board.php" );
 		exit();
@@ -53,6 +53,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 			//set session variable
 			$user_firstname = $accountDatabaseAdapter ->getUserName($email);
 			$_SESSION['user'] = $user_firstname ;
+			$_SESSION['user_email'] = $email;
 			
 			// Redirect to Board Page.
 			header ( "Location: ../../board.php" );
@@ -62,6 +63,27 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	}
 
 }
+
+//OFFERING POST
+else if($_POST['form'] === 'formOffering'){
+
+	$accountDatabaseAdapter ->createOfferingPost();
+
+	header ( "Location: ../../board.php" );
+}
+
+//SEEKING POST
+else if($_POST['form'] === 'formSeeking'){
+
+	$accountDatabaseAdapter ->createSeekingPost();
+
+	header ( "Location: ../../board.php" );
+
+}
+
+
+
+
 
 
 ?>

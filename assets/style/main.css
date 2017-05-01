@@ -310,13 +310,13 @@ div.tab button.sectionl.active {
 	line-height: 1.5em;
 }
 
-.createpostoccupation{
+#createpostoccupationseeking, #createpostoccupationoffering{
 	font-size: 18pt;
 	font-family: "Roboto";
 	width: 11em;
 }
 
-.createpostdescription{
+#createpostdescriptionseeking, #createpostdescriptionoffering{
 	font-size: 18pt;
 	font-family: "Roboto";
 	resize: none;
@@ -324,18 +324,18 @@ div.tab button.sectionl.active {
 	height: 5em;
 }
 
-.createpostduedate{
+#createpostduedate{
 	font-size: 16pt;
 	width: 9.75em;
 }
 
-#createpostoptions{
+#createpostoptions, #createpostoptions2 {
 	display: none;
 	text-align: center;
 	margin-top: 1em;
 }
 
-.createpostcategories{
+#createpostcategories, #createpostcategories2{
 	height: 2em;
 	outline: none;
 	font-size: 12pt;
@@ -345,7 +345,7 @@ div.tab button.sectionl.active {
 	outline: none;
 }
 
-#createpostbutton{
+#createpostbutton, #createpostbutton2{
 	background-color: #0080c0;
     border: none;
     color: white;

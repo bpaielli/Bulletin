@@ -6,8 +6,9 @@ and make a new row in the database.
 
 -->
 
-
 <?php
+
+
 class accountDatabaseAdapter {
 	private $DB;
 	
@@ -96,5 +97,70 @@ class accountDatabaseAdapter {
 		return $name;
 	}
 	
+	public function createOfferingPost(){
+		
+		//increment unique ID
+		$stmt = $this->DB->prepare ( "SELECT MAX(ID) FROM post;" );
+		$stmt->execute ();
+		$uniqueID = $stmt->fetchColumn ();
+		$uniqueID ++;
+		
+		//set remaining variables
+		$type = 'offering';
+		$user_id = $_SESSION['user_email'];
+		$location = '85719';
+		$category = $_POST['createpostcategories'];
+		$occupation = $_POST['createpostoccupationoffering'];
+		$description = $_POST['createpostdescriptionoffering'];
+		$due_date = '';
+		$contact = $_SESSION['user_email'];
+
+		
+		//INSERT into DB
+		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :user_id, :location, :category, :occupation, :description, :dueDate, :contact);");
+		$stmt->bindParam('uniqueID', $uniqueID);
+		$stmt->bindParam('type', $type);
+		$stmt->bindParam('user_id', $user_id);
+		$stmt->bindParam('location', $location);
+		$stmt->bindParam('category', $category);
+		$stmt->bindParam('occupation', $occupation);
+		$stmt->bindParam('description', $description);
+		$stmt->bindParam('dueDate', $due_date);
+		$stmt->bindParam('contact', $contact);
+		$stmt->execute ();
+		
+		return true;
+	}
+	
+	public function createSeekingPost(){
+		//increment unique ID
+		$stmt = $this->DB->prepare ( "SELECT MAX(ID) FROM post;" );
+		$stmt->execute ();
+		$uniqueID = $stmt->fetchColumn ();
+		$uniqueID ++;
+		
+		//set remaining variables
+		$type = 'seeking';
+		$user_id = $_SESSION['user_email'];
+		$location = '85719';
+		$category = $_POST['createpostcategories2'];
+		$occupation = $_POST['createpostoccupationseeking'];
+		$description = $_POST['createpostdescriptionseeking'];
+		$due_date = $_POST['createpostduedate'];
+		$contact = $_SESSION['user_email'];
+		
+		//INSERT into DB
+		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :user_id, :location, :category, :occupation, :description, :dueDate, :contact);");
+		$stmt->bindParam('uniqueID', $uniqueID);
+		$stmt->bindParam('type', $type);
+		$stmt->bindParam('user_id', $user_id);
+		$stmt->bindParam('location', $location);
+		$stmt->bindParam('category', $category);
+		$stmt->bindParam('occupation', $occupation);
+		$stmt->bindParam('description', $description);
+		$stmt->bindParam('dueDate', $due_date);
+		$stmt->bindParam('contact', $contact);
+		$stmt->execute ();
+	}
 } // end class acccountDatabaseAdapter
 ?>
