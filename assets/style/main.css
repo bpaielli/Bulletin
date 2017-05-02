@@ -290,7 +290,7 @@ div.tab button.sectionl.active {
 	font-family: "Roboto";
 	margin: 0 auto;
 	width: 11em;
-	height: 15em;
+	height: 17em;
 	padding: 0em 1em;
 }
 
@@ -329,7 +329,13 @@ div.tab button.sectionl.active {
 	width: 9.75em;
 }
 
-#createpostoptions, #createpostoptions2 {
+#createpostoptions, #createpostoptions, #createpostoptions2 {
+	display: none;
+	text-align: center;
+	margin-top: 1em;
+}
+
+{
 	display: none;
 	text-align: center;
 	margin-top: 1em;
@@ -363,13 +369,14 @@ div.tab button.sectionl.active {
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 1em;
-	background-color: #ececff;
+ 	background-color: #ececff;
 	font-size: 14pt;
 	font-family: "Roboto";
 	margin: .7em;
 	width: 9em;
 	padding: 1em 1em;
 	line-height: 1.5em;
+	
 }
 
 .livepostcontent{
