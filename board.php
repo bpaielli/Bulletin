@@ -1,6 +1,8 @@
 <!-- Programmers: Austin Mutschler & Brittany Paielli -->
 <?php
 session_start ();
+include 'assets/scripts/model.php';
+$accountDatabaseAdapter = new accountDatabaseAdapter();
 
 // If user is not logged in
 if (! isset ( $_SESSION ['user'] )) {
@@ -59,127 +61,29 @@ if (! isset ( $_SESSION ['user'] )) {
 	</div>
 
 	<div id="Offering" class="boardcontent">
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I am a <span
-					class="userinputtedfield">OCCUPATION</span> looking for people that
-				need <span class="userinputtedfield">DESCRIPTION</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I am a <span
-					class="userinputtedfield">OCCUPATION</span> looking for people that
-				need <span class="userinputtedfield">DESCRIPTION</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I am a <span
-					class="userinputtedfield">OCCUPATION</span> looking for people that
-				need <span class="userinputtedfield">DESCRIPTION</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I am a <span
-					class="userinputtedfield">OCCUPATION</span> looking for people that
-				need <span class="userinputtedfield">DESCRIPTION</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I am a <span
-					class="userinputtedfield">OCCUPATION</span> looking for people that
-				need <span class="userinputtedfield">DESCRIPTION</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I am a <span
-					class="userinputtedfield">OCCUPATION</span> looking for people that
-				need <span class="userinputtedfield">DESCRIPTION</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-
+	<?php 	
+	$arr = $accountDatabaseAdapter -> getAllOfferingPosts();
+	$result = '';
+	
+	foreach ($arr as $item){
+		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
+		
+		echo $result;
+		
+	}
+	?>
 	</div>
 
 	<div id="Seeking" class="boardcontent">
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I'm looking
-				for a <span class="userinputtedfield">OCCUPATION</span> for help
-				with <span class="userinputtedfield">DESCRIPTION</span> by <span
-					class="userinputtedfield">DATE</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I'm looking
-				for a <span class="userinputtedfield">OCCUPATION</span> for help
-				with <span class="userinputtedfield">DESCRIPTION</span> by <span
-					class="userinputtedfield">DATE</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I'm looking
-				for a <span class="userinputtedfield">OCCUPATION</span> for help
-				with <span class="userinputtedfield">DESCRIPTION</span> by <span
-					class="userinputtedfield">DATE</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I'm looking
-				for a <span class="userinputtedfield">OCCUPATION</span> for help
-				with <span class="userinputtedfield">DESCRIPTION</span> by <span
-					class="userinputtedfield">DATE</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I'm looking
-				for a <span class="userinputtedfield">OCCUPATION</span> for help
-				with <span class="userinputtedfield">DESCRIPTION</span> by <span
-					class="userinputtedfield">DATE</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-		<div class="posttemplate">
-			<p class="livepostcontent">
-				My name is <span class="userinputtedfield">NAME</span>. I'm looking
-				for a <span class="userinputtedfield">OCCUPATION</span> for help
-				with <span class="userinputtedfield">DESCRIPTION</span> by <span
-					class="userinputtedfield">DATE</span>
-			</p>
-			<button id="contactbutton" class="USERID">Contact Now</button>
-		</div>
-
-
+	<?php 	
+	$arr = $accountDatabaseAdapter -> getAllSeekingPosts();
+	$result = '';
+	
+	foreach ($arr as $item){
+		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield">' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
+		echo $result;
+	}
+	?>
 	</div>
 
 	<div id="MyPosts" class="boardcontent">

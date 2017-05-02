@@ -68,7 +68,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 else if($_POST['form'] === 'formOffering'){
 
 	$accountDatabaseAdapter ->createOfferingPost();
-
+	
 	header ( "Location: ../../board.php" );
 }
 
@@ -76,6 +76,9 @@ else if($_POST['form'] === 'formOffering'){
 else if($_POST['form'] === 'formSeeking'){
 
 	$accountDatabaseAdapter ->createSeekingPost();
+	
+	
+	
 
 	header ( "Location: ../../board.php" );
 

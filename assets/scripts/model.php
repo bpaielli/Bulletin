@@ -6,6 +6,7 @@ and make a new row in the database.
 
 -->
 
+
 <?php
 
 
@@ -142,6 +143,7 @@ class accountDatabaseAdapter {
 		//set remaining variables
 		$type = 'seeking';
 		$user_id = $_SESSION['user_email'];
+		$date = '05-01-2017';
 		$location = '85719';
 		$category = $_POST['createpostcategories2'];
 		$occupation = $_POST['createpostoccupationseeking'];
@@ -150,10 +152,11 @@ class accountDatabaseAdapter {
 		$contact = $_SESSION['user_email'];
 		
 		//INSERT into DB
-		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :user_id, :location, :category, :occupation, :description, :dueDate, :contact);");
+		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :user_id, :date, :location, :category, :occupation, :description, :dueDate, :contact);");
 		$stmt->bindParam('uniqueID', $uniqueID);
 		$stmt->bindParam('type', $type);
 		$stmt->bindParam('user_id', $user_id);
+		$stmt->bindParam('date', $date);
 		$stmt->bindParam('location', $location);
 		$stmt->bindParam('category', $category);
 		$stmt->bindParam('occupation', $occupation);
@@ -161,6 +164,28 @@ class accountDatabaseAdapter {
 		$stmt->bindParam('dueDate', $due_date);
 		$stmt->bindParam('contact', $contact);
 		$stmt->execute ();
+	
+		//
+	
+	}
+	
+	
+	public function getAllOfferingPosts(){
+		$stmt = $this->DB->prepare ( "SELECT * FROM post WHERE type='offering';" );
+		$stmt->execute ();
+		
+		$arr = $stmt->fetchAll();
+		
+		return $arr;
+	}
+	
+	public function getAllSeekingPosts(){
+		$stmt = $this->DB->prepare ( "SELECT * FROM post WHERE type='seeking';" );
+		$stmt->execute ();
+		
+		$arr = $stmt->fetchAll();
+		
+		return $arr;
 	}
 } // end class acccountDatabaseAdapter
 ?>
