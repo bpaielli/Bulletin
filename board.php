@@ -46,7 +46,10 @@ if (! isset ( $_SESSION ['user'] )) {
 				<div class="mainsearch">
 					<select id="categories" class="categories" name="categories">
 					<?php 
-					if(isset($_GET['category'])){
+					if(isset($_GET['category']) && $_GET['category'] === 'All Categories'){
+						echo file_get_contents('./categories.txt', true);
+					}
+					else if(isset($_GET['category'])){
 						echo '<option selected="selected" value="' . $_GET['category'] . '">' . $_GET['category'] .'</option>';
 						echo file_get_contents('./categories.txt', true);
 					}
