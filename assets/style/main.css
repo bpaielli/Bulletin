@@ -277,12 +277,12 @@ div.tab button.sectionl.active {
 
 #createoffering{
 	display: none;
-	height: 20em;
+	padding: 15px 20px;
 }
 
 #createseeking{
 	display: none;
-	height: 22em;
+	padding: 15px 20px;
 }
 
 .createposttemplate{
@@ -300,7 +300,6 @@ div.tab button.sectionl.active {
 .postcontentname{
 	text-align: justify;
 	margin: 0;
-	margin-top: .5em;
 	margin-bottom: .2em;
 	line-height: 1.5em;
 }
@@ -313,13 +312,28 @@ div.tab button.sectionl.active {
 	line-height: 1.5em;
 }
 
-#createpostoccupationseeking, #createpostoccupationoffering{
+#createpostoccupationseeking{
 	font-size: 18pt;
 	font-family: "Roboto";
 	width: 11em;
 }
 
-#createpostdescriptionseeking, #createpostdescriptionoffering{
+#createpostoccupationoffering{
+	font-size: 18pt;
+	font-family: "Roboto";
+	width: 11em;
+}
+
+#createpostdescriptionseeking{
+	font-size: 18pt;
+	font-family: "Roboto";
+	resize: none;
+	width: 11em;
+	height: 5em;
+}
+
+
+#createpostdescriptionoffering{
 	font-size: 18pt;
 	font-family: "Roboto";
 	resize: none;
@@ -332,19 +346,27 @@ div.tab button.sectionl.active {
 	width: 9.75em;
 }
 
-#createpostoptions, #createpostoptions2 {
+#createpostoptions{
 	display: none;
 	text-align: center;
 	margin-top: 1em;
 }
 
-{
+#createpostoptions2 {
 	display: none;
 	text-align: center;
 	margin-top: 1em;
 }
 
-#createpostcategories, #createpostcategories2{
+
+#createpostcategories{
+	height: 2em;
+	outline: none;
+	font-size: 12pt;
+	text-align: center;
+}
+
+#createpostcategories2{
 	height: 2em;
 	outline: none;
 	font-size: 12pt;
@@ -375,13 +397,43 @@ div.tab button.sectionl.active {
 	text-align:center;
 }
 
-.posttemplate{
+.offeringposttemplate{
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 1em;
  	background-color: #ececff;
+	font-size: 14pt;
+	font-family: "Roboto";
+	margin: .7em;
+	width: 9em;
+	padding: 1em 1em;
+	line-height: 1.5em;
+}
+
+.seekingposttemplate{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 1em;
+ 	background-color: #ffffce;
+	font-size: 14pt;
+	font-family: "Roboto";
+	margin: .7em;
+	width: 9em;
+	padding: 1em 1em;
+	line-height: 1.5em;
+}
+
+.myposttemplate{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 1em;
+ 	background-color: #ffddfe;
 	font-size: 14pt;
 	font-family: "Roboto";
 	margin: .7em;
@@ -397,7 +449,7 @@ div.tab button.sectionl.active {
 
 .userinputtedfield{
 	font-weight: bold;
-	background-color: #ffff00;
+/* 	background-color: #ffff00; */
 }
 
 
@@ -408,8 +460,9 @@ div.tab button.sectionl.active {
     padding: 5px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 12pt;
+    font-size: 14pt;
     font-family: "Roboto";
     cursor: pointer;
-    height: 3em;
+    min-height: 42px;
+    max-width: 160px;
 }

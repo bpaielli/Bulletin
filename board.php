@@ -66,9 +66,9 @@ if (! isset ( $_SESSION ['user'] )) {
 	$arr = $accountDatabaseAdapter -> getAllOfferingPosts();
 	$result = '';
 	
-	foreach ($arr as $item){
+	foreach (array_reverse($arr) as $item){
 		
-		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
+		$result = '<div class="offeringposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['name'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item['contact'] . '\'">Contact Now<br></button></div>';
 		
 		echo $result;
 		
@@ -81,8 +81,8 @@ if (! isset ( $_SESSION ['user'] )) {
 	$arr = $accountDatabaseAdapter -> getAllSeekingPosts();
 	$result = '';
 	
-	foreach ($arr as $item){
-		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
+	foreach (array_reverse($arr)as $item){
+		$result = '<div class="seekingposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['name'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item['contact'] . '\'">Contact Now<br>'.'</button></div>';
 		echo $result;
 	}
 	?>
@@ -97,12 +97,12 @@ if (! isset ( $_SESSION ['user'] )) {
 		echo "You currently have no active posts.";
 	}
 	
-	foreach ($arr as $item){
+	foreach (array_reverse($arr) as $item){
 		if($item['type'] === 'seeking'){
-			$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
+			$result = '<div class="myposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['name'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item['contact'] . '\'">Contact Now<br></button></div>';
 		}
 		else{
-			$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
+			$result = '<div class="myposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['name'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item['contact'] . '\'">Contact Now<br></button></div>';
 		}
 		echo $result;
 	}

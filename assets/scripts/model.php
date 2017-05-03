@@ -118,10 +118,10 @@ class accountDatabaseAdapter {
 
 		
 		//INSERT into DB
-		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :user_id, :location, :category, :occupation, :description, :dueDate, :contact);");
+		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :name, :location, :category, :occupation, :description, :dueDate, :contact);");
 		$stmt->bindParam('uniqueID', $uniqueID);
 		$stmt->bindParam('type', $type);
-		$stmt->bindParam('user_id', $user_id);
+		$stmt->bindParam('name', $user_id);
 		$stmt->bindParam('location', $location);
 		$stmt->bindParam('category', $category);
 		$stmt->bindParam('occupation', $occupation);
@@ -152,10 +152,10 @@ class accountDatabaseAdapter {
 		$contact = $_SESSION['user_email'];
 		
 		//INSERT into DB
-		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :user_id, :location, :category, :occupation, :description, :dueDate, :contact);");
+		$stmt = $this->DB->prepare ("INSERT into post values(:uniqueID, :type, :name, :location, :category, :occupation, :description, :dueDate, :contact);");
 		$stmt->bindParam('uniqueID', $uniqueID);
 		$stmt->bindParam('type', $type);
-		$stmt->bindParam('user_id', $user_id);
+		$stmt->bindParam('name', $user_id);
 		$stmt->bindParam('location', $location);
 		$stmt->bindParam('category', $category);
 		$stmt->bindParam('occupation', $occupation);
@@ -189,7 +189,7 @@ class accountDatabaseAdapter {
 	
 	
 	public function getAllPersonalPosts($currUser){
-		$query = 'Select user_account.email, post.type, post.user_id, post.category, post.body_description, post.due_date, post.contact FROM post JOIN user_account ON user_account.email = post.contact WHERE user_account.email = "' . $currUser . '";';
+		$query = 'Select user_account.email, post.type, post.name, post.category, post.body_description, post.due_date, post.contact FROM post JOIN user_account ON user_account.email = post.contact WHERE user_account.email = "' . $currUser . '";';
 		
 		$stmt = $this->DB->prepare($query);
 		$stmt->execute ();
