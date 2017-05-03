@@ -38,31 +38,7 @@ if (! isset ( $_SESSION ['user'] )) {
 			<div class="mainsearch">
 				<input class="searchinput" type="text" name="search"
 					placeholder="Search"> <select class="categories" name="categories">
-					<option value="all">All Categories</option>
-					<option value="automotive">Automotive</option>
-					<option value="beauty">Beauty</option>
-					<option value="babysitting">Babysitting</option>
-					<option value="cell-mobile">Cell/Mobile</option>
-					<option value="computer">Computer</option>
-					<option value="creative">Creative</option>
-					<option value="event">Event</option>
-					<option value="education">Education</option>
-					<option value="farm-garden">Farm/Garden</option>
-					<option value="financial">Financial</option>
-					<option value="career">Career/Job</option>
-					<option value="household">Household</option>
-					<option value="landscape">Landscaping</option>
-					<option value="labor-move">Labor/Move</option>
-					<option value="legal">Legal</option>
-					<option value="marketing">Marketing</option>
-					<option value="medical">Medical/Health</option>
-					<option value="pet">Pet</option>
-					<option value="real estate">Real Estate</option>
-					<option value="skilled trade">Skilled Trade</option>
-					<option value="sm biz ads">Small Biz Ads</option>
-					<option value="softwaredevelopment">Software Development</option>
-					<option value="therapeutic">Therapeutic</option>
-					<option value="travel">Travel</option>
+					<?php echo file_get_contents('./categories.txt', true);?>
 				</select>
 				<button id="searchbutton">Search</button>
 			</div>
@@ -158,30 +134,7 @@ if (! isset ( $_SESSION ['user'] )) {
 						<p>
 							Category: <select id="createpostcategories"
 								name="createpostcategories">
-								<option value="automotive">Automotive</option>
-								<option value="beauty">Beauty</option>
-								<option value="babysitting">Babysitting</option>
-								<option value="cell-mobile">Cell/Mobile</option>
-								<option value="computer">Computer</option>
-								<option value="creative">Creative</option>
-								<option value="event">Event</option>
-								<option value="education">Education</option>
-								<option value="farm-garden">Farm/Garden</option>
-								<option value="financial">Financial</option>
-								<option value="career">Career/Job</option>
-								<option value="household">Household</option>
-								<option value="landscape">Landscaping</option>
-								<option value="labor-move">Labor/Move</option>
-								<option value="legal">Legal</option>
-								<option value="marketing">Marketing</option>
-								<option value="medical">Medical/Health</option>
-								<option value="pet">Pet</option>
-								<option value="real estate">Real Estate</option>
-								<option value="skilled trade">Skilled Trade</option>
-								<option value="sm biz ads">Small Biz Ads</option>
-								<option value="softwaredevelopment">Software Development</option>
-								<option value="therapeutic">Therapeutic</option>
-								<option value="travel">Travel</option>
+								<?php echo file_get_contents('./categories.txt', true);?>
 							</select>
 						</p>
 						<button id="createpostbutton">Create Post</button>
@@ -211,30 +164,7 @@ if (! isset ( $_SESSION ['user'] )) {
 					<p>
 						Category: <select id="createpostcategories2"
 							name="createpostcategories2">
-							<option value="automotive">Automotive</option>
-								<option value="beauty">Beauty</option>
-								<option value="babysitting">Babysitting</option>
-								<option value="cell-mobile">Cell/Mobile</option>
-								<option value="computer">Computer</option>
-								<option value="creative">Creative</option>
-								<option value="event">Event</option>
-								<option value="education">Education</option>
-								<option value="farm-garden">Farm/Garden</option>
-								<option value="financial">Financial</option>
-								<option value="career">Career/Job</option>
-								<option value="household">Household</option>
-								<option value="landscape">Landscaping</option>
-								<option value="labor-move">Labor/Move</option>
-								<option value="legal">Legal</option>
-								<option value="marketing">Marketing</option>
-								<option value="medical">Medical/Health</option>
-								<option value="pet">Pet</option>
-								<option value="real estate">Real Estate</option>
-								<option value="skilled trade">Skilled Trade</option>
-								<option value="sm biz ads">Small Biz Ads</option>
-								<option value="softwaredevelopment">Software Development</option>
-								<option value="therapeutic">Therapeutic</option>
-								<option value="travel">Travel</option>
+							   <?php echo file_get_contents('./categories.txt', true);?>
 						</select>
 					</p>
 
