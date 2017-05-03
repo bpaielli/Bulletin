@@ -77,15 +77,17 @@ else if($_POST['form'] === 'formSeeking'){
 
 	$accountDatabaseAdapter ->createSeekingPost();
 	
-	
-	
 
 	header ( "Location: ../../board.php" );
 
 }
 
-
-
+//Searching a category
+else if ($_POST['form'] === 'searchSeekingOffering'){
+	
+	$location = "Location: ../../board.php?category=" . $_POST['categories'];
+	header ( $location  );
+}
 
 
 

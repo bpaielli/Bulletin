@@ -4,6 +4,8 @@ session_start ();
 include 'assets/scripts/model.php';
 $accountDatabaseAdapter = new accountDatabaseAdapter ();
 
+$_POST ['form'] = '';
+
 // If user is not logged in
 if (! isset ( $_SESSION ['user'] )) {
 	header ( "Location: login.php" );
@@ -34,16 +36,33 @@ if (! isset ( $_SESSION ['user'] )) {
 			</div>
 
 		</div>
-		<div id="searcharea">
-			<div class="mainsearch">
-				<input class="searchinput" type="text" name="search"
-					placeholder="Search"> <select class="categories" name="categories">
-					<?php echo file_get_contents('./categories.txt', true);?>
+
+		<form id="searchForm" action="assets/scripts/controller.php"
+			method="post">
+
+			<input type="hidden" name="form" value="searchSeekingOffering" />
+
+			<div id="searcharea">
+				<div class="mainsearch">
+					<select id="categories" class="categories" name="categories">
+					<?php 
+					if(isset($_GET['category'])){
+						echo '<option selected="selected" value="' . $_GET['category'] . '">' . $_GET['category'] .'</option>';
+						echo file_get_contents('./categories.txt', true);
+					}
+					
+					else{
+						echo '<option selected="selected" disabled="disabled">Select a Category</option>';
+						echo file_get_contents('./categories.txt', true);
+					}
+					
+					?>
 				</select>
-				<button id="searchbutton">Search</button>
+					<button id="searchbutton">Search</button>
+				</div>
+				<div id="location"></div>
 			</div>
-			<div id="location"></div>
-		</div>
+		</form>
 	</div>
 
 	<div class="tab">
@@ -59,46 +78,76 @@ if (! isset ( $_SESSION ['user'] )) {
 
 	<div id="Offering" class="boardcontent">
 	<?php
-	$arr = $accountDatabaseAdapter->getAllOfferingPosts ();
-	$result = '';
+	if (isset ( $_GET ['category'] ) && ($_GET ['category'] !== 'All Categories')) {
+		$arr = $accountDatabaseAdapter->searchOfferingPosts ( $_GET ['category'] );
+	} else {
+		$arr = $accountDatabaseAdapter->getAllOfferingPosts ();
+	}
 	
-	foreach ( array_reverse ( $arr ) as $item ) {
-		
-		$result = '<div class="offeringposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am a <span class="userinputtedfield">' . $item ['category'] . '</span> looking for people that need <span class="userinputtedfield">' . $item ['body_description'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br></button></div>';
-		
+	if (sizeof ( $arr ) == 0) {
+		$result = 'There are currently no offering posts for ' . $_GET ['category'];
 		echo $result;
+	} else {
+		$result = '';
+		
+		foreach ( array_reverse ( $arr ) as $item ) {
+			
+			$result = '<div class="offeringposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am a <span class="userinputtedfield">' . $item ['occupation'] . '</span> looking for people that need <span class="userinputtedfield">' . $item ['body_description'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br></button></div>';
+			
+			echo $result;
+		}
 	}
 	?>
 	</div>
 
 	<div id="Seeking" class="boardcontent">
 	<?php
-	$arr = $accountDatabaseAdapter->getAllSeekingPosts ();
-	$result = '';
+	if (isset ( $_GET ['category'] ) && ($_GET ['category'] !== 'All Categories')) {
+		$arr = $accountDatabaseAdapter->searchSeekingPosts ( $_GET ['category'] );
+	} else {
+		$arr = $accountDatabaseAdapter->getAllSeekingPosts ();
+	}
 	
-	foreach ( array_reverse ( $arr ) as $item ) {
-		$result = '<div class="seekingposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item ['category'] . '</span> for help with <span class="userinputtedfield">' . $item ['body_description'] . '</span> by <span class="userinputtedfield"><br>' . $item ['due_date'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br>' . '</button></div>';
+	if (sizeof ( $arr ) == 0) {
+		$result = 'There are currently no seeking posts for ' . $_GET ['category'];
 		echo $result;
+	} else {
+		$result = '';
+		
+		foreach ( array_reverse ( $arr ) as $item ) {
+			$result = '<div class="seekingposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item ['occupation'] . '</span> for help with <span class="userinputtedfield">' . $item ['body_description'] . '</span> by <span class="userinputtedfield"><br>' . $item ['due_date'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br>' . '</button></div>';
+			echo $result;
+		}
 	}
 	?>
 	</div>
 
 	<div id="MyPosts" class="boardcontent">
 	<?php
-	$arr = $accountDatabaseAdapter->getAllPersonalPosts ( $_SESSION ['user_email'] );
-	$result = '';
-	
-	if (sizeof ( $arr ) == 0) {
-		echo "You currently have no active posts.";
+	if (isset ( $_GET ['category'] ) && ($_GET ['category'] !== 'All Categories')) {
+		$arr = $accountDatabaseAdapter->searchPersonalPosts ( $_SESSION ['user_email'], $_GET ['category'] );
+	} else {
+		$arr = $accountDatabaseAdapter->getAllPersonalPosts ( $_SESSION ['user_email'] );
 	}
 	
-	foreach ( array_reverse ( $arr ) as $item ) {
-		if ($item ['type'] === 'seeking') {
-			$result = '<div class="myposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item ['category'] . '</span> for help with <span class="userinputtedfield">' . $item ['body_description'] . '</span> by <span class="userinputtedfield"><br>' . $item ['due_date'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br></button></div>';
-		} else {
-			$result = '<div class="myposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am a <span class="userinputtedfield">' . $item ['category'] . '</span> looking for people that need <span class="userinputtedfield">' . $item ['body_description'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br></button></div>';
-		}
+	if (sizeof ( $arr ) == 0 && isset ( $_GET ['category'] )) {
+		$result = 'You have no seeking or offering posts for ' . $_GET ['category'];
 		echo $result;
+	} else {
+		$result = '';
+		
+		if (sizeof ( $arr ) == 0) {
+			echo "You currently have no active posts.";
+		}
+		
+		foreach ( array_reverse ( $arr ) as $item ) {
+			if ($item ['type'] === 'seeking') {
+				$result = '<div class="seekingposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item ['occupation'] . '</span> for help with <span class="userinputtedfield">' . $item ['body_description'] . '</span> by <span class="userinputtedfield"><br>' . $item ['due_date'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br>' . '</button></div>';
+			} else {
+				$result = '<div class="offeringposttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">' . $item ['name'] . '</span>. I am a <span class="userinputtedfield">' . $item ['occupation'] . '</span> looking for people that need <span class="userinputtedfield">' . $item ['body_description'] . '</span></p><button id="contactbutton" class="USERID" onclick="window.location.href=\'mailto:' . $item ['contact'] . '\'">Contact Now<br></button></div>';
+			}
+			echo $result;
+		}
 	}
 	?>
 	</div>

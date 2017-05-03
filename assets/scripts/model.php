@@ -189,11 +189,41 @@ class accountDatabaseAdapter {
 	
 	
 	public function getAllPersonalPosts($currUser){
-		$query = 'Select user_account.email, post.type, post.name, post.category, post.body_description, post.due_date, post.contact FROM post JOIN user_account ON user_account.email = post.contact WHERE user_account.email = "' . $currUser . '";';
+		$query = 'Select user_account.email, post.type, post.name, post.category, post.occupation, post.body_description, post.due_date, post.contact FROM post JOIN user_account ON user_account.email = post.contact WHERE user_account.email = "' . $currUser . '";';
 		
 		$stmt = $this->DB->prepare($query);
 		$stmt->execute ();
 		
+		$arr = $stmt->fetchAll();
+		
+		return $arr;
+	}
+	
+	public function searchOfferingPosts($category){
+		$query = "SELECT * FROM post WHERE type ='offering' AND category='" . $category . "';";
+		$stmt = $this->DB->prepare ( $query ); 
+		$stmt->execute ();
+		
+		$arr = $stmt->fetchAll();
+		
+		return $arr;
+	}
+	
+	public function searchSeekingPosts($category){
+		$query = "SELECT * FROM post WHERE type ='seeking' AND category='" . $category . "';";
+		$stmt = $this->DB->prepare ( $query );
+		$stmt->execute ();
+		
+		$arr = $stmt->fetchAll();
+		
+		return $arr;
+	}
+	
+	public function searchPersonalPosts($currUser, $category){
+		$query = 'Select user_account.email, post.type, post.name, post.category, post.occupation, post.body_description, post.due_date, post.contact FROM post JOIN user_account ON user_account.email = post.contact WHERE user_account.email = "' . $currUser . '" AND post.category="' . $category . '";';
+		
+		$stmt = $this->DB->prepare($query);
+		$stmt->execute ();
 		$arr = $stmt->fetchAll();
 		
 		return $arr;
