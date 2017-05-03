@@ -45,18 +45,17 @@ if (! isset ( $_SESSION ['user'] )) {
 			<div id="searcharea">
 				<div class="mainsearch">
 					<select id="categories" class="categories" name="categories">
-					<?php 
-					if(isset($_GET['category']) && $_GET['category'] === 'All Categories'){
-						echo file_get_contents('./categories.txt', true);
-					}
-					else if(isset($_GET['category'])){
-						echo '<option selected="selected" value="' . $_GET['category'] . '">' . $_GET['category'] .'</option>';
-						echo file_get_contents('./categories.txt', true);
-					}
-					
-					else{
+					<?php
+					if (isset ( $_GET ['category'] ) && $_GET ['category'] === 'All Categories') {
+						echo file_get_contents ( './categories.txt', true );
+					} else if (isset ( $_GET ['category'] )) {
+						echo '<option selected="selected" value="' . $_GET ['category'] . '">' . $_GET ['category'] . '</option>';
+						echo file_get_contents ( './categories.txt', true );
+					} 
+
+					else {
 						echo '<option selected="selected" disabled="disabled">Select a Category</option>';
-						echo file_get_contents('./categories.txt', true);
+						echo file_get_contents ( './categories.txt', true );
 					}
 					
 					?>
