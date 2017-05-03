@@ -27,7 +27,7 @@ if (! isset ( $_SESSION ['user'] )) {
 		</div>
 		<div class="headright">
 			<div class="dropdown">
-				<div id="usersname"><?php echo $_SESSION['user'];?></div>
+				<div id="usersname">Hello, <?php echo $_SESSION['user'];?></div>
 				<div class="dropdown-content">
 					<a href="assets/scripts/logout.php">Logout</a>
 				</div>
@@ -54,11 +54,12 @@ if (! isset ( $_SESSION ['user'] )) {
 		<button id="home" class="sectionl" onclick="openPage('Offering')">Offering</button>
 		<button class="sectionl" onclick="openPage('Seeking')">Seeking</button>
 		<button class="sectionl" onclick="openPage('MyPosts')">My Posts</button>
+		
 		<div id="newpostbutton">
 			<button class="mainbuttons">Create Post</button>
 		</div>
-
-	</div>
+</div>
+	
 
 	<div id="Offering" class="boardcontent">
 	<?php 	
@@ -66,7 +67,7 @@ if (! isset ( $_SESSION ['user'] )) {
 	$result = '';
 	
 	foreach ($arr as $item){
-		$result = '<div class="posttemplate" style="height: 13em;"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
+		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
 		
 		echo $result;
 		
@@ -80,7 +81,7 @@ if (! isset ( $_SESSION ['user'] )) {
 	$result = '';
 	
 	foreach ($arr as $item){
-		$result = '<div class="posttemplate" style="height: 13em;"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
+		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
 		echo $result;
 	}
 	?>
@@ -97,10 +98,10 @@ if (! isset ( $_SESSION ['user'] )) {
 	
 	foreach ($arr as $item){
 		if($item['type'] === 'seeking'){
-			$result = '<div class="posttemplate" style="height: 13em;"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
+			$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] . '</span>. I am looking for a <span class="userinputtedfield">' . $item['category'] .'</span> for help with <span class="userinputtedfield">' . $item['body_description'].'</span> by <span class="userinputtedfield"><br>' . $item['due_date']. '</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact']. '</button></div>';
 		}
 		else{
-			$result = '<div class="posttemplate" style="height: 13em;"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
+			$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
 		}
 		echo $result;
 	}
@@ -123,7 +124,7 @@ if (! isset ( $_SESSION ['user'] )) {
 			<form id="formOffering" action="assets/scripts/controller.php"
 				method="post">
 				<input type="hidden" name="form" value="formOffering" />
-				<div id="createoffering" class="createposttemplate" style = "height: 20em;">
+				<div id="createoffering" class="createposttemplate">
 					<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I am a...</p>
 					<input id="createpostoccupationoffering" type="text"
 						name="createpostoccupationoffering" placeholder="Your Occupation" required>
@@ -152,7 +153,7 @@ if (! isset ( $_SESSION ['user'] )) {
 				
 				<input type="hidden" name="form" value="formSeeking"/>
 
-				<div id="createseeking" class="createposttemplate" style="height: 22em;">
+				<div id="createseeking" class="createposttemplate">
 					<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I'm looking for a...</p>
 					<input id="createpostoccupationseeking" type="text"
 						name="createpostoccupationseeking"
@@ -165,7 +166,7 @@ if (! isset ( $_SESSION ['user'] )) {
 							name="createpostduedate" required>
 					</p>
 
-						<p style ="text-align: center;">
+						<p>
 							Category: <select id="createpostcategories2"
 								name="createpostcategories2">
 								<option value="babysitting">Babysitting</option>
@@ -175,7 +176,7 @@ if (! isset ( $_SESSION ['user'] )) {
 							</select>
 						</p>
 						
-					<div id="buttonCreate" style="text-align: center;">
+					<div id="buttonCreate">
 					<button id="createpostbutton">Create Post</button>
 					</div>
 					
