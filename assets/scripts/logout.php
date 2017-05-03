@@ -1,3 +1,4 @@
+<!-- Programmers: Austin Mutschler & Brittany Paielli -->
 <?php
 session_start();
 
