@@ -217,6 +217,7 @@ div.tab button.sectionl.active {
     display: none;
     float: left;
     padding: 1em 3.3em 1em 3.1em;
+ 
 }
 
 .cpbox {
@@ -276,10 +277,12 @@ div.tab button.sectionl.active {
 
 #createoffering{
 	display: none;
+	height: 20em;
 }
 
 #createseeking{
 	display: none;
+	height: 22em;
 }
 
 .createposttemplate{
@@ -290,7 +293,7 @@ div.tab button.sectionl.active {
 	font-family: "Roboto";
 	margin: 0 auto;
 	width: 11em;
-	height: 17em;
+	
 	padding: 0em 1em;
 }
 
@@ -345,12 +348,16 @@ div.tab button.sectionl.active {
 	height: 2em;
 	outline: none;
 	font-size: 12pt;
+	text-align: center;
 }
 
 .createpostcategories:active:hover{
 	outline: none;
 }
 
+#buttonCreate{
+	text-align: center;
+}
 #createpostbutton, #createpostbutton2{
 	background-color: #0080c0;
     border: none;
@@ -364,8 +371,13 @@ div.tab button.sectionl.active {
     height: 3em;
 }
 
+#categoryDiv{
+	text-align:center;
+}
+
 .posttemplate{
-	float: left;
+	display: inline-block;
+	vertical-align: top;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 1em;
@@ -376,7 +388,6 @@ div.tab button.sectionl.active {
 	width: 9em;
 	padding: 1em 1em;
 	line-height: 1.5em;
-	
 }
 
 .livepostcontent{

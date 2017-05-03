@@ -190,6 +190,7 @@ class accountDatabaseAdapter {
 	
 	public function getAllPersonalPosts($currUser){
 		$query = 'Select user_account.email, post.type, post.user_id, post.category, post.body_description, post.due_date, post.contact FROM post JOIN user_account ON user_account.email = post.contact WHERE user_account.email = "' . $currUser . '";';
+		
 		$stmt = $this->DB->prepare($query);
 		$stmt->execute ();
 		

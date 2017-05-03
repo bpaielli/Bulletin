@@ -12,10 +12,10 @@ function getZip() {
 			if (isZip)
 				document.getElementById("location").innerHTML = "Location: " + zipCode;
 			else
-				document.getElementById("location").innerHTML = "Location: Enter Postal Code";
+				document.getElementById("location").innerHTML = "Location: cannot be determined";
 		}
 		else{
-			document.getElementById("location").innerHTML = "Location: Enter Postal Code";
+			document.getElementById("location").innerHTML = "Location: cannot be determined";
 		}
 	}
 	xhttp.open("GET", "https://ipinfo.io/json", true);

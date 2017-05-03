@@ -67,6 +67,7 @@ if (! isset ( $_SESSION ['user'] )) {
 	$result = '';
 	
 	foreach ($arr as $item){
+		
 		$result = '<div class="posttemplate"><p class="livepostcontent">My name is <span class="userinputtedfield">'. $item['user_id'] .'</span>. I am a <span class="userinputtedfield">' . $item['category'] .'</span> looking for people that need <span class="userinputtedfield">' . $item['body_description'] .'</span></p><button id="contactbutton" class="USERID">Contact Now<br>'. $item['contact'] .'</button></div>';
 		
 		echo $result;
@@ -177,7 +178,7 @@ if (! isset ( $_SESSION ['user'] )) {
 						</p>
 						
 					<div id="buttonCreate">
-					<button id="createpostbutton">Create Post</button>
+					<button id="createpostbutton2">Create Post</button>
 					</div>
 					
 				</div>
