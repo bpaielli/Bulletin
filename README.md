@@ -8,14 +8,7 @@ and simple way to see exactly what people in your community have to offer.
 ![main](https://github.com/bpaielli/Bulletin/blob/master/assets/images/splashlogin/bulletin_homepage.png)
 
 
-
-
 ![board](https://github.com/bpaielli/Bulletin/blob/master/assets/images/splashlogin/bulletin_main.png)
-
-
-
-Users can create an account, login, create posts, search posts and contact other users. 
-
 
 
 ![create post](https://github.com/bpaielli/Bulletin/blob/master/assets/images/splashlogin/bulletin_createpost.png)
