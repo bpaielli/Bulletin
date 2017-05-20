@@ -6,4 +6,4 @@ able to offer their services to other users. The magic is in simplicity. With li
 and simple way to see exactly what people in your community have to offer.
 
 Inline-style: 
-![alt text](https://github.com/bpaielli/Bulletin/tree/master/assets/images/splashlogin/bulletin_main.png "main")
+![board](https://drive.google.com/file/d/0B8LLsKBIxPuzQzZsbVpqOUxWaFU/view?usp=sharing)
