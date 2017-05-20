@@ -5,4 +5,4 @@ help with everyday tasks such as yard work, babysitting, and much more. Bulletin
 able to offer their services to other users. The magic is in simplicity. With limited text fields it is an easy
 and simple way to see exactly what people in your community have to offer.
 
-![](https://drive.google.com/file/d/0B8LLsKBIxPuzQzZsbVpqOUxWaFU/view?usp=sharing)
+![board](https://github.com/bpaielli/Bulletin/blob/master/assets/images/splashlogin/bulletin_main.png)
