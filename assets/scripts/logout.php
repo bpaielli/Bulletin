@@ -8,6 +8,6 @@ unset($_SESSION['user_email']);
 
 
 //Redirect to Login Page
-header ( "Location: ../../login.php" );
+header ( "Location: login.php" );
 exit();
 ?>

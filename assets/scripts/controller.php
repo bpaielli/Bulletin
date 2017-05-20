@@ -16,7 +16,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$existsInDB = $accountDatabaseAdapter -> userExistInDB($email);
 		
 	if($existsInDB){
-		header("Location: ../../register.php?error=duplicateCreds");
+		header("Location: register.php?error=duplicateCreds");
 	}else{
 		//create account
 		$accountDatabaseAdapter -> createAccount($firstname, $lastname, $email, $password);
@@ -24,7 +24,7 @@ if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['emai
 		$_SESSION['user'] = $firstname;
 		$_SESSION['user_email'] = $email;
 		// Redirect to Board Page.
-		header ( "Location: ../../board.php" );
+		header ( "Location: board.php" );
 		exit();
 	}
 
@@ -39,7 +39,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 	
 	//wrong username
 	if(!$existsInDB){
-		header("Location: ../../login.php?error=badCreds");
+		header("Location: login.php?error=badCreds");
 		
 	}
 	else{
@@ -48,7 +48,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 		
 		//wrong password
 		if(!$userVerfied){
-			header("Location: ../../login.php?error=badCreds");
+			header("Location: login.php?error=badCreds");
 		}
 		else{
 			//set session variable
@@ -57,7 +57,7 @@ else if(isset($_POST['email']) && isset($_POST['password'])){
 			$_SESSION['user_email'] = $email;
 			
 			// Redirect to Board Page.
-			header ( "Location: ../../board.php" );
+			header ( "Location: board.php" );
 			exit();
 		}
 		
@@ -70,7 +70,7 @@ else if($_POST['form'] === 'formOffering'){
 
 	$accountDatabaseAdapter ->createOfferingPost();
 	
-	header ( "Location: ../../board.php" );
+	header ( "Location: board.php" );
 }
 
 //SEEKING POST
@@ -79,14 +79,14 @@ else if($_POST['form'] === 'formSeeking'){
 	$accountDatabaseAdapter ->createSeekingPost();
 	
 
-	header ( "Location: ../../board.php" );
+	header ( "Location: board.php" );
 
 }
 
 //Searching a category
 else if ($_POST['form'] === 'searchSeekingOffering'){
 	
-	$location = "Location: ../../board.php?category=" . $_POST['categories'];
+	$location = "Location: board.php?category=" . $_POST['categories'];
 	header ( $location  );
 }
 

@@ -15,7 +15,7 @@ if (isset ( $_SESSION ['user'] )) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bulletin - Register</title>
-<link href="assets/style/start.css" type="text/css" rel="stylesheet">
+<link href="../style/start.css" type="text/css" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300"
 	rel="stylesheet">
@@ -25,7 +25,7 @@ if (isset ( $_SESSION ['user'] )) {
 	<div id="overlay">
 		<div id="registercontainer">
 			<p id="registerheader">Bulletin</p>
-			<form id="formblock" action="assets/scripts/controller.php"
+			<form id="formblock" action="controller.php"
 				method="post">
 				<input type="text" name="firstname" placeholder="First Name"
 					autofocus required> <input type="text" name="lastname"

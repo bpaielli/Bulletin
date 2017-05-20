@@ -15,7 +15,7 @@ if (isset ( $_SESSION ['user'] )) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bulletin - Login</title>
-<link href="assets/style/start.css" type="text/css" rel="stylesheet">
+<link href="../style/start.css" type="text/css" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300"
 	rel="stylesheet">
@@ -25,7 +25,7 @@ if (isset ( $_SESSION ['user'] )) {
 		<div id="logincontainer">
 			<p id="loginheader">Bulletin</p>
 			
-			<form action="assets/scripts/controller.php" method="post">
+			<form action="controller.php" method="post">
 				<div id="formblock">
 					<input type="email" name="email" placeholder="Email" autofocus
 						required> <input type="password" name="password"

@@ -1,7 +1,7 @@
 <!-- Programmers: Austin Mutschler & Brittany Paielli -->
 <?php
 session_start ();
-include 'assets/scripts/model.php';
+include 'model.php';
 $accountDatabaseAdapter = new accountDatabaseAdapter ();
 
 $_POST ['form'] = '';
@@ -17,7 +17,7 @@ if (! isset ( $_SESSION ['user'] )) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bulletin - Board</title>
-<link href="assets/style/main.css" type="text/css" rel="stylesheet">
+<link href="../style/main.css" type="text/css" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300"
 	rel="stylesheet">
@@ -31,13 +31,13 @@ if (! isset ( $_SESSION ['user'] )) {
 			<div class="dropdown">
 				<div id="usersname">Hello, <?php echo $_SESSION['user'];?></div>
 				<div class="dropdown-content">
-					<a href="assets/scripts/logout.php">Logout</a>
+					<a href="logout.php">Logout</a>
 				</div>
 			</div>
 
 		</div>
 
-		<form id="searchForm" action="assets/scripts/controller.php"
+		<form id="searchForm" action="controller.php"
 			method="post">
 
 			<input type="hidden" name="form" value="searchSeekingOffering" />
@@ -47,15 +47,15 @@ if (! isset ( $_SESSION ['user'] )) {
 					<select id="categories" class="categories" name="categories">
 					<?php
 					if (isset ( $_GET ['category'] ) && $_GET ['category'] === 'All Categories') {
-						echo file_get_contents ( './categories.txt', true );
+						echo file_get_contents ( '../txt/categories.txt', true );
 					} else if (isset ( $_GET ['category'] )) {
 						echo '<option selected="selected" value="' . $_GET ['category'] . '">' . $_GET ['category'] . '</option>';
-						echo file_get_contents ( './categories.txt', true );
+						echo file_get_contents ( '../txt/categories.txt', true );
 					} 
 
 					else {
 						echo '<option selected="selected" disabled="disabled">Select a Category</option>';
-						echo file_get_contents ( './categories.txt', true );
+						echo file_get_contents ( '../txt/categories.txt', true );
 					}
 					
 					?>
@@ -167,7 +167,7 @@ if (! isset ( $_SESSION ['user'] )) {
 					onclick="offeringSeekingSelection('createseeking')">Seeking</button>
 			</div>
 
-			<form id="formOffering" action="assets/scripts/controller.php"
+			<form id="formOffering" action="controller.php"
 				method="post">
 				<input type="hidden" name="form" value="formOffering" />
 				<div id="createoffering" class="createposttemplate">
@@ -185,7 +185,7 @@ if (! isset ( $_SESSION ['user'] )) {
 						<p>
 							Category: <select id="createpostcategories"
 								name="createpostcategories">
-								<?php echo file_get_contents('./categories.txt', true);?>
+								<?php echo file_get_contents('../txt/categories.txt', true);?>
 							</select>
 						</p>
 						<button id="createpostbutton">Create Post</button>
@@ -193,7 +193,7 @@ if (! isset ( $_SESSION ['user'] )) {
 				</div>
 			</form>
 
-			<form id="formSeeking" action="assets/scripts/controller.php"
+			<form id="formSeeking" action="controller.php"
 				method="post">
 
 				<input type="hidden" name="form" value="formSeeking" />
@@ -215,7 +215,7 @@ if (! isset ( $_SESSION ['user'] )) {
 					<p>
 						Category: <select id="createpostcategories2"
 							name="createpostcategories2">
-							   <?php echo file_get_contents('./categories.txt', true);?>
+							   <?php echo file_get_contents('../txt/categories.txt', true);?>
 						</select>
 					</p>
 
@@ -231,7 +231,7 @@ if (! isset ( $_SESSION ['user'] )) {
 </body>
 
 
-<script type="text/javascript" src="assets/js/geolocation.js"></script>
-<script type="text/javascript" src="assets/js/tabs.js"></script>
-<script type="text/javascript" src="assets/js/createpostbox.js"></script>
+<script type="text/javascript" src="../js/geolocation.js"></script>
+<script type="text/javascript" src="../js/tabs.js"></script>
+<script type="text/javascript" src="../js/createpostbox.js"></script>
 </html>
