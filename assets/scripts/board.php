@@ -72,11 +72,11 @@ if (! isset ( $_SESSION ['user'] )) {
 		<button class="sectionl" onclick="openPage('Seeking')">Seeking</button>
 		<button class="sectionl" onclick="openPage('MyPosts')">My Posts</button>
 
-		<div id="newpostbutton">
+		
+	</div>
+<div id="newpostbutton">
 			<button class="mainbuttons">Create Post</button>
 		</div>
-	</div>
-
 
 	<div id="Offering" class="boardcontent">
 	<?php

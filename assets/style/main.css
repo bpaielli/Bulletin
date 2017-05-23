@@ -202,6 +202,8 @@ div.tab button.sectionl.active {
 #newpostbutton{
 	float: right;
 	margin-right: 4em;
+	margin-top: -4em;
+
 }
 
 
