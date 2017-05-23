@@ -162,11 +162,8 @@ html, body{
 .categories{
 	width: 15em;
 	height: 2em;
-	border-top: none;
-	border-right: none;
-	border-bottom: none;
-	outline: none;
 	font-size: 12pt;
+	margin-right: 1em;
 }
 
 .categories:active:hover{
