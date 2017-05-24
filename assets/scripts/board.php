@@ -37,8 +37,7 @@ if (! isset ( $_SESSION ['user'] )) {
 
 		</div>
 
-		<form id="searchForm" action="controller.php"
-			method="post">
+		<form id="searchForm" action="controller.php" method="post">
 
 			<input type="hidden" name="form" value="searchSeekingOffering" />
 
@@ -71,12 +70,11 @@ if (! isset ( $_SESSION ['user'] )) {
 		<button id="home" class="sectionl" onclick="openPage('Offering')">Offering</button>
 		<button class="sectionl" onclick="openPage('Seeking')">Seeking</button>
 		<button class="sectionl" onclick="openPage('MyPosts')">My Posts</button>
-
-		
 	</div>
-<div id="newpostbutton">
-			<button class="mainbuttons">Create Post</button>
-		</div>
+	
+	<div id="newpostbutton">
+		<button class="mainbuttons">Create Post</button>
+	</div>
 
 	<div id="Offering" class="boardcontent">
 	<?php
@@ -167,8 +165,7 @@ if (! isset ( $_SESSION ['user'] )) {
 					onclick="offeringSeekingSelection('createseeking')">Seeking</button>
 			</div>
 
-			<form id="formOffering" action="controller.php"
-				method="post">
+			<form id="formOffering" action="controller.php" method="post">
 				<input type="hidden" name="form" value="formOffering" />
 				<div id="createoffering" class="createposttemplate">
 					<p class="postcontentname">My name is <?php echo $_SESSION['user']; ?>. I am a...</p>
@@ -193,8 +190,7 @@ if (! isset ( $_SESSION ['user'] )) {
 				</div>
 			</form>
 
-			<form id="formSeeking" action="controller.php"
-				method="post">
+			<form id="formSeeking" action="controller.php" method="post">
 
 				<input type="hidden" name="form" value="formSeeking" />
 

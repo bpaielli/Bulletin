@@ -1,140 +1,140 @@
 /* Programmers: Austin Mutschler & Brittany Paielli */
 @CHARSET "UTF-8";
 
-html, body{
+html, body {
 	margin: 0px;
 	height: 100vh;
 	min-width: 1085px;
 }
 
-.searchinput{
+.searchinput {
 	width: 40em;
-    background-color: white;
-    color: #272727;
-    border: none;
-    outline: none;
-    padding: 10px 10px;
-    margin-bottom: 1em;
-    font-size: 12pt;
+	background-color: white;
+	color: #272727;
+	border: none;
+	outline: none;
+	padding: 10px 10px;
+	margin-bottom: 1em;
+	font-size: 12pt;
 }
 
-.searchinput:focus{
+.searchinput:focus {
 	border-style: solid;
 	border-color: #0080c0;
 	border-width: 1px;
 	border-right: none;
 }
 
-::placeholder{
+::placeholder {
 	color: #5c5c5c;
 }
 
-.mainbuttons{
-    background-color: #0080c0;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12pt;
-    font-family: "Roboto";
-    cursor: pointer;
+.mainbuttons {
+	background-color: #0080c0;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12pt;
+	font-family: "Roboto";
+	cursor: pointer;
 }
 
-.mainbuttons:hover { 
-    background-color: #0080ff;
+.mainbuttons:hover {
+	background-color: #0080ff;
 }
 
-#searchbutton{
-    background-color: #0080c0;
-    border: none;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12pt;
-    font-family: "Roboto";
-    cursor: pointer;
-    height: 2em;
+#searchbutton {
+	background-color: #0080c0;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12pt;
+	font-family: "Roboto";
+	cursor: pointer;
+	height: 2em;
 }
 
-#searchbutton:hover { 
-    background-color: #0080ff;
+#searchbutton:hover {
+	background-color: #0080ff;
 }
 
-#head{
+#head {
 	background-color: #efefef;
 	height: 3em;
 	padding: 1em 3em 3em 3em;
 }
 
-.logo{
+.logo {
 	float: left;
 	width: 10em;
 }
 
-.textlogo{
+.textlogo {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 35pt;
 	color: #0080c0;
 	text-shadow: 2px 2px 20px white;
 	margin: 0;
 	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#searcharea{
+#searcharea {
 	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1em auto;
-    width: 40em;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 1em auto;
+	width: 40em;
 }
 
-.mainsearch{
+.mainsearch {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	height: 3em;
 	width: 40em;
 }
 
-.headright{
+.headright {
 	float: right;
 	display: flex;
 	flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20em;
+	justify-content: center;
+	align-items: center;
+	width: 20em;
 	height: 6em;
 	width: 10em;
 	margin-top: -0.5em;
 }
 
-.dropbox{
+.dropbox {
 	position: relative;
-    display: inline-block;
+	display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 100px;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin: 0 -1.5em;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 100px;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	margin: 0 -1.5em;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-family: "Roboto", sans-serif;
+	color: black;
+	padding: 12px 12px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-family: "Roboto", sans-serif;
 }
 
 .dropdown-content a:hover {
@@ -142,149 +142,149 @@ html, body{
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+	display: block;
 }
 
-
-
-#usersname{
+#usersname {
 	margin-bottom: .5em;
 	font-family: 'Roboto', sans-serif;
 	font-size: 12pt;
 	cursor: pointer;
 }
 
-#location{
+#location {
 	font-family: 'Roboto', sans-serif;
 	font-size: 12pt;
 }
 
-.categories{
+.categories {
 	width: 15em;
 	height: 2em;
 	font-size: 12pt;
 	margin-right: 1em;
 }
 
-.categories:active:hover{
+.categories:active:hover {
 	outline: none;
 }
 
 div.tab {
-    overflow: hidden;
-    background-color: #efefef;
-    padding-left: 3em;
+	overflow: hidden;
+	background-color: #efefef;
+	padding-left: 3em;
 }
 
 div.tab button.sectionl {
-    background-color: #fafafa;
-    float: left;
-    border-left: 1px solid #9b9b9b;
-    border-right: 1px solid #9b9b9b;
-    border-top: 1px solid #9b9b9b;
-    border-bottom: 1px solid #9b9b9b;
-    outline: none;
-    cursor: pointer;
-    padding: 10px 25px;
-    transition: 0.1s;
-    font-size: 12pt;
+	background-color: #fafafa;
+	float: left;
+	border-left: 1px solid #9b9b9b;
+	border-right: 1px solid #9b9b9b;
+	border-top: 1px solid #9b9b9b;
+	border-bottom: 1px solid #9b9b9b;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	transition: 0.1s;
+	font-size: 12pt;
 }
 
 div.tab button.sectionl:hover {
-    background-color: white;
+	background-color: white;
 }
 
 div.tab button.sectionl.active {
-    background-color: white;
-    border-bottom: 1px solid white;
+	background-color: white;
+	border-bottom: 1px solid white;
 }
 
-#newpostbutton{
+#newpostbutton {
 	float: right;
 	margin-right: 4em;
 	margin-top: -4em;
-
 }
 
+#Seeking, #Offering, #MyPosts {
+	font-family: "Roboto", sans-serif;
+	font-size: 15pt;
+}
 
-#logoutbutton{
+#logoutbutton {
 	float: right;
 	margin-right: 2em;
 }
 
 .boardcontent {
-    display: none;
-    float: left;
-    padding: 1em 3.3em 1em 3.1em;
- 
+	display: none;
+	float: left;
+	padding: 1em 3.3em 1em 3.1em;
 }
 
 .cpbox {
 	display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0,0,0,0.2);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .cp-content {
-    background-color: white;
-    font-size: 12pt;
+	background-color: white;
+	font-size: 12pt;
 	font-family: "Roboto";
-    margin: 2em auto;
-    padding: 0.5em 1.5em 2em 1.5em;
-    border: 1px solid #888;
-    width: 26em;
-    border-radius: 25px;
-    transition: 0.5s;
+	margin: 2em auto;
+	padding: 0.5em 1.5em 2em 1.5em;
+	border: 1px solid #888;
+	width: 26em;
+	border-radius: 25px;
+	transition: 0.5s;
 }
 
 .close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-#createposttypepicker{
+#createposttypepicker {
 	margin-bottom: 20px;
 	text-align: center;
 	transition: 0.5s;
 }
 
 .pickerbutton {
-    background-color: #fafafa;
-    border: 1px solid #9b9b9b;
-    outline: none;
-    cursor: pointer;
-    padding: 10px 25px;
-    font-size: 12pt;
-    transition: 0.1s;
+	background-color: #fafafa;
+	border: 1px solid #9b9b9b;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 25px;
+	font-size: 12pt;
+	transition: 0.1s;
 }
 
-#createoffering{
+#createoffering {
 	display: none;
 	padding: 15px 20px;
 }
 
-#createseeking{
+#createseeking {
 	display: none;
 	padding: 15px 20px;
 }
 
-.createposttemplate{
+.createposttemplate {
 	border: 1px solid black;
 	border-radius: 1em;
 	background-color: #ececff;
@@ -292,18 +292,17 @@ div.tab button.sectionl.active {
 	font-family: "Roboto";
 	margin: 0 auto;
 	width: 11em;
-	
 	padding: 0em 1em;
 }
 
-.postcontentname{
+.postcontentname {
 	text-align: justify;
 	margin: 0;
 	margin-bottom: .2em;
 	line-height: 1.5em;
 }
 
-.postcontenttext{
+.postcontenttext {
 	text-align: justify;
 	margin: 0;
 	margin-top: .2em;
@@ -311,28 +310,19 @@ div.tab button.sectionl.active {
 	line-height: 1.5em;
 }
 
-#createpostoccupationseeking{
+#createpostoccupationseeking {
 	font-size: 18pt;
 	font-family: "Roboto";
 	width: 11em;
 }
 
-#createpostoccupationoffering{
+#createpostoccupationoffering {
 	font-size: 18pt;
 	font-family: "Roboto";
 	width: 11em;
 }
 
-#createpostdescriptionseeking{
-	font-size: 18pt;
-	font-family: "Roboto";
-	resize: none;
-	width: 11em;
-	height: 5em;
-}
-
-
-#createpostdescriptionoffering{
+#createpostdescriptionseeking {
 	font-size: 18pt;
 	font-family: "Roboto";
 	resize: none;
@@ -340,12 +330,20 @@ div.tab button.sectionl.active {
 	height: 5em;
 }
 
-#createpostduedate{
+#createpostdescriptionoffering {
+	font-size: 18pt;
+	font-family: "Roboto";
+	resize: none;
+	width: 11em;
+	height: 5em;
+}
+
+#createpostduedate {
 	font-size: 16pt;
 	width: 9.75em;
 }
 
-#createpostoptions{
+#createpostoptions {
 	display: none;
 	text-align: center;
 	margin-top: 1em;
@@ -357,52 +355,52 @@ div.tab button.sectionl.active {
 	margin-top: 1em;
 }
 
-
-#createpostcategories{
+#createpostcategories {
 	height: 2em;
 	outline: none;
 	font-size: 12pt;
 	text-align: center;
 }
 
-#createpostcategories2{
+#createpostcategories2 {
 	height: 2em;
 	outline: none;
 	font-size: 12pt;
 	text-align: center;
 }
 
-.createpostcategories:active:hover{
+.createpostcategories:active:hover {
 	outline: none;
 }
 
-#buttonCreate{
+#buttonCreate {
 	text-align: center;
 }
-#createpostbutton, #createpostbutton2{
+
+#createpostbutton, #createpostbutton2 {
 	background-color: #0080c0;
-    border: none;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12pt;
-    font-family: "Roboto";
-    cursor: pointer;
-    height: 3em;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12pt;
+	font-family: "Roboto";
+	cursor: pointer;
+	height: 3em;
 }
 
-#categoryDiv{
-	text-align:center;
+#categoryDiv {
+	text-align: center;
 }
 
-.offeringposttemplate{
+.offeringposttemplate {
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 1em;
- 	background-color: #ececff;
+	background-color: #ececff;
 	font-size: 14pt;
 	font-family: "Roboto";
 	margin: .7em;
@@ -411,13 +409,13 @@ div.tab button.sectionl.active {
 	line-height: 1.5em;
 }
 
-.seekingposttemplate{
+.seekingposttemplate {
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 1em;
- 	background-color: #ffffce;
+	background-color: #ffffce;
 	font-size: 14pt;
 	font-family: "Roboto";
 	margin: .7em;
@@ -426,13 +424,13 @@ div.tab button.sectionl.active {
 	line-height: 1.5em;
 }
 
-.myposttemplate{
+.myposttemplate {
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 1em;
- 	background-color: #ffddfe;
+	background-color: #ffddfe;
 	font-size: 14pt;
 	font-family: "Roboto";
 	margin: .7em;
@@ -441,27 +439,25 @@ div.tab button.sectionl.active {
 	line-height: 1.5em;
 }
 
-.livepostcontent{
+.livepostcontent {
 	margin-top: 0;
 }
 
-
-.userinputtedfield{
+.userinputtedfield {
 	font-weight: bold;
-/* 	background-color: #ffff00; */
+	/* 	background-color: #ffff00; */
 }
 
-
-#contactbutton{
+#contactbutton {
 	background-color: #0080c0;
-    border: none;
-    color: white;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14pt;
-    font-family: "Roboto";
-    cursor: pointer;
-    min-height: 42px;
-    max-width: 160px;
+	border: none;
+	color: white;
+	padding: 5px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 14pt;
+	font-family: "Roboto";
+	cursor: pointer;
+	min-height: 42px;
+	max-width: 160px;
 }
